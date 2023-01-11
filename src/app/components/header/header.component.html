@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="col-12 headerStyle">
+        <ul class="nav">
+          <li class="col-sm-2"></li>
+            <li class="nav-item col-sm-8 d-flex justify-content-center">
+              <a class="nav-link active pageTitle" href=""> Swap your shift</a>
+            </li>
+            <li class="nav-item col-sm-2 d-flex justify-content-end">
+              <div class="toggle" *ngIf="userId">
+                <a class="pl-5"> <img class="Icon " (click)="toggle()" src="assets/man.png" alt="man"></a>
+                
+                <div class="show_logOut">
+                  <a href="/profile" class="title">profile <span><img class="logout_Icon" src="assets/man.png" alt="logout"></span> </a>
+                </div>
+
+                <div class="show_logOut" (click)="logOut()">
+                  <a href="/login" class="title">LogOut <span><img class="logout_Icon"  style="margin-bottom: 1px;" src="assets/logout.png" alt="logout"></span> </a>
+                </div>
+                
+              </div>
+            </li>
+          </ul>
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+[class*="col-"] {
+    width: 100%;
+    float: left;
+}
+@media only screen and (max-width: 600px) {
+    div .pageTitle{
+        font-size: 24px;
+        word-spacing: 2px;
+    }
+    div .toggle{
+        margin-top: -50px;
+    }
+    div .toggle a img{
+        height: 40px;
+        width: 40px;
+    }
+    div div .show_logOut{
+        width: 100px;
+        padding: 5px;
+    }
+    div div .title{
+        font-size: 12px;
+        text-align: center;
+    }
+    div div div .logout_Icon{
+        height: 27px;
+        width: 27px;
+    }
+}
+.headerStyle{
+    width: 100%;
+    height: 60px;
+    background-color: #6b084c;
+}
+
+.pageTitle{
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    text-transform: capitalize;
+    word-spacing: 10px;
+    font-family:  'Lobster', cursive;
+}
+
+.Icon{
+    margin-top: 5px;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 5px;
+}
+.show_logOut{
+    position: relative;
+    width: 150px;
+    margin-right: -30px;
+    padding: 0px 10px;
+    margin-top: 3px;
+    padding-left: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #962071;
+    display: flex;
+    border-radius: 10px;
+    z-index: 2;
+    cursor: pointer;
+}
+.title{
+    font-weight: 600;
+    color: white;
+    width: 100%;
+}
+.logout_Icon{
+    width: 30px;
+    height: 30px;
+}
+.btn_logOut{
+    background-color: #962071;
+    // border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,45 @@
+[class*="col-"] {
+    width: 100%;
+    float: left;
+}
+
+
+.login{
+    font-weight: 600;
+    box-shadow: inset 2px 2px rgb(246, 237, 255) ,inset -2px -2px 5px rgb(250, 203, 254);
+    border-radius: 10px;
+}
+
+.btn{
+    color: white;
+    background-color: #962071;
+}
+
+.btn:hover{
+    color: white;
+    background-color: #73129c;
+}
+.text-danger,.text-success{
+    font-size: 12px;
+}
+.title{
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-weight: 600;
+    color: #b530a8;
+    padding-bottom: 5px;
+}
+.registerLink{
+    font-size: 13px;
+    margin-top: 25px;
+    text-decoration: underline;
+}
+.btnLetsGo{
+    color: white;
+    background-color: rgb(178, 0, 104);
+}
+.btnLetsGo:hover{
+    color: black;
+    background-color: yellow;
+}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "swap-shift": {
+      "hosting": {
+        "swap-shifts": [
+          "swap-shift"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "swap-shift"
+  }
+}

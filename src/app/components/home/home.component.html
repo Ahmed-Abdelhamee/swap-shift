@@ -1,0 +1,64 @@
+<!-- <div class="col-12"> -->
+    <!-- <app-register></app-register> -->
+    <!-- <app-login></app-login> -->
+<!-- </div> -->
+
+<div class="col-12  d-flex justify-content-center content">
+    <div class="col-sm-6">
+        <div class="card p-4 form_collection">
+            <form [formGroup]="swap" (ngSubmit)="saveSwap()" novalidate>
+                <p class="lets_swap" *ngIf="isUser"> let's swap</p>
+                <p class="text-center" *ngIf="!isUser"> <a class="notify_sign" href="/login">اضغط لتسجيل الدخول اولا</a></p>
+                <div class="col-12 mb-2">
+                    <div class="form-group pt-1">
+                        <select class="form-control site_select" name="where" formControlName="where" id="where" (change)="set_where($event)">
+                            <option value="site" >سايت</option>
+                            <option value="home" >هووم</option>
+                        </select>
+                        <p class="shift"> مكان العمل  </p>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control swap_select" name="SwapType" id="SwapType"  formControlName="SwapType" (change)="set_SwapType($event)">
+                            <option value="holiday" class="text-center" >تبديل اجازة </option>
+                            <option value="shift" >تبديل شيفت</option>
+                        </select>
+                        <p class="shift"> نوع التبديل  </p>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control date_Input" type="date" formControlName="have_day" name="date" id="date"> 
+                        <p class="date"> اليوم </p>
+                    </div>
+                    <div class="form-group" *ngIf="shift && whereIsSelected && isUser">
+                        <input class="form-control time_Input" type="time"  formControlName="have_shift" name="time" id="time" >
+                        <p class="shift"> شيفتك </p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group" *ngIf="shift && whereIsSelected && isUser">
+                        <input class="form-control time_Input" type="time" name="time" formControlName="need_shift" id="time">
+                        <p class="shift">نيد  شيفت</p>
+                    </div>
+                    <span *ngIf="shift && homeShiftType  && whereIsSelected && isUser">
+                        <select class="form-control need_select" id="exampleFormControlSelect1"  formControlName="shift_type" name="need" id="need">
+                            <option value="full" >كامل </option>
+                            <option value="divided" >متقسم </option>
+                            <!-- <option value="{{item}}"*ngFor="let item of shift_Time ; let i=index" >{{item}}</option> -->
+                        </select>
+                        <p class="shift">نوع الشيفت </p>
+                    </span>
+                    <div class="form-group" *ngIf="holiday && whereIsSelected && isUser">
+                        <input class="form-control date_Input" type="date" formControlName="need_day" name="date" id="date"> 
+                        <p class="shift">  نيد اليوم </p>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class=" Submit"> Swap</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<app-zfooter></app-zfooter>

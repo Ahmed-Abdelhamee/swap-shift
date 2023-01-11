@@ -1,0 +1,35 @@
+[class *='col-']{
+    float: left;
+}
+@media only screen and (max-width: 600px) {
+    .container{
+    background-image: url(/assets/callcenter2.png);
+    background-size: cover;
+    }
+    div .card{
+        height: 325px;
+    }
+}
+.wait{
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 600px;
+    width: 100%;
+    opacity: .5;
+    z-index: 2;
+    background-color: rgb(122, 115, 115);
+    padding-top: 250px;
+    background-image: none;
+
+}
+.wait .text-light{
+    font-size: larger;
+    margin-left: 10px;
+    font-weight: 700;
+}
+.card{
+    height: 300px;
+}

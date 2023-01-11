@@ -1,0 +1,31 @@
+
+<div class="col-12 container">
+
+    <div class="col-12 wait d-flex justify-content-center" *ngIf="wait">
+        <div class="spinner-border text-light" role="status">
+            <span class="sr-only ">Loading...</span>
+          </div>
+          <div class="text-light"> Loading...</div>
+    </div>
+
+    <div class="col-12"  *ngIf=" !wait">
+        <div class="col-sm-3 p-3" *ngFor="let item of user_requests ; let i=index">
+            <div class="card p-3">
+                <P class="text" *ngIf="item.SwapType !='' "> <span class="text-info"> SwapType : </span> {{item.SwapType}}</P>
+                <P class="text" *ngIf="item.where !='' "> <span class="text-info"> where :  </span> {{item.where}}</P>
+                <P class="text" *ngIf="item.have_day !='' "> <span class="text-info"> have day : </span> {{item.have_day}}</P>
+                <P class="text" *ngIf="item.need_day !='' "> <span class="text-info"> need day :  </span> {{item.need_day}}</P>
+                <P class="text" *ngIf="item.have_shift !='' "><span class="text-info"> have shift :  </span> {{item.have_shift}}</P>
+                <P class="text" *ngIf="item.need_shift !='' "> <span class="text-info"> need shift  </span> {{item.need_shift}}</P>
+                <P class="text" *ngIf="item.shift_type !='' "> <span class="text-info"> shift type : </span> {{item.shift_type}}</P>
+                <P class="text" > <span class="text-info"> phone : </span> {{ user.phone}}</P>
+                <div class="text-center">
+                    <button class="btn btn-outline-danger" (click)="delete_request(item.key!)">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<app-zfooter *ngIf="!wait"></app-zfooter>

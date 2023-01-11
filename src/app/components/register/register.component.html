@@ -1,0 +1,53 @@
+
+<div class="col-12 d-flex justify-content-center pt-5">
+    <div class="card col-sm-4 p-4 register" data-aos="zoom-in" data-aos-duration="1500"  *ngIf="!userExist">
+        <h3 class="title">Create Account</h3>
+        <form [formGroup]="register" (ngSubmit)="regist()">
+          <div class="form-group">
+            <input type="text" class="form-control"  placeholder="Name" name="name" formControlName="name" required>
+            <div class="text-success" *ngIf="register.get('name')?.valid">Valid.</div>
+            <div class="text-danger" *ngIf="register.get('name')?.invalid">Please enter name.</div>
+          </div>
+          <div class="form-group">
+            <input type="tel" class="form-control"  placeholder=" What's App phone" name="phone" formControlName="phone" required>
+            <div class="text-success" *ngIf="register.get('phone')?.valid">Valid.</div>
+            <div class="text-danger" *ngIf="register.get('phone')?.invalid">Please fill with length 11 .</div>
+          </div>
+
+          <div class="form-group">
+            <input type="email" class="form-control"  placeholder=" Email" name="email" formControlName="email" required>
+            <div class="text-success" *ngIf="register.get('email')?.valid">Valid.</div>
+            <div class="text-danger" *ngIf="register.get('email')?.invalid">Please enter email .</div>
+          </div>
+
+          <div class="form-group">
+              <input type="password" [class.invalid]="register.get('pass')?.invalid" class="form-control" id="pwd" placeholder="Password" name="pswd" formControlName="pass" required>
+              <div class="text-success" *ngIf="register.get('pass')?.valid">Valid.</div>
+              <div class="text-danger" *ngIf="register.get('pass')?.invalid">Please fill with min length 6 .</div>
+            </div>
+            
+            <div class="form-group">
+              <input type="password" [class.invalid]="register.get('ConfiremPass')?.invalid" class="form-control" id="pwd" placeholder="ConfiremPass Password" name="pswd" formControlName="ConfiremPass" required>
+              <div class="text-success" *ngIf="register.get('ConfiremPass')?.value==register.get('pass')?.value">Valid.</div>
+              <div class="text-danger" *ngIf="register.get('ConfiremPass')?.value!=register.get('pass')?.value">not equal password .</div>
+            </div>
+            
+            <div class="text-center">
+                <button type="submit" class="btn btn-dark">Create</button>
+            </div>
+          </form>
+    </div>
+
+    <div class="col-sm-4" *ngIf="userExist">
+      <div class="text-center">
+        <img src="assets/let's go.png" alt="let's go" width="100%">
+        <a href="/home">
+          <button type="button" class="btn btnLetsGo"> Lets Go </button>
+        </a>
+      </div>
+    </div>
+</div>
+
+
+
+<app-zfooter></app-zfooter>
