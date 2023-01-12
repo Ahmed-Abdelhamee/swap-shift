@@ -20,14 +20,14 @@
             <button type="submit" class="btn btn-dark">Login</button>
           </div>
         </form>
-        <a href="/register" class="registerLink">* let's create account *</a>
+        <a routerLink="/register" class="registerLink">* let's create account *</a>
 
     </div>
 
     <div class="col-sm-4" *ngIf="userExist">
       <div class="text-center">
         <img src="assets/let's go.png" alt="let's go" width="100%">
-        <a href="/home">
+        <a routerLink="/home">
           <button type="button" class="btn btnLetsGo"> Lets Go </button>
         </a>
       </div>
