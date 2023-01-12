@@ -51,6 +51,8 @@ export class LoginComponent implements OnInit {
       this.authServ.user=log.user;
       setTimeout(()=>{
             window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
+            // // window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
+            // // window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
       }, 2000)
       // setTimeout(()=>{window.location.reload()}, 2000)
     }).catch(err =>{

@@ -131,7 +131,7 @@ export class DataService {
   }
 
   delete_Request(key:any){
-    this.http.delete(`${this.database.app.options.databaseURL}/swap_${this.Date.getMonth()+1}/${key}.json`).subscribe(()=> window.location.reload() )
+    this.http.delete(`${this.database.app.options.databaseURL}/swap_${this.Date.getMonth()+1}/${key}.json`).subscribe(()=> {} )
   }
 }
 

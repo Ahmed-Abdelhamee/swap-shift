@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { profileRequsts } from 'src/app/interfaces/profile-requests.interface';
 import { swap } from 'src/app/interfaces/swap.interface';
 import { users } from 'src/app/interfaces/users.interface';
@@ -17,7 +18,7 @@ export class ProfileComponent implements OnInit {
   user:any
   wait:boolean=false;
 
-  constructor(private dataServ : DataService) {
+  constructor(private dataServ : DataService , private toastr:ToastrService) {
     dataServ.getUsers().subscribe(data =>{
       for (const key in data) {
         if (Object.prototype.hasOwnProperty.call(data, key)) {
@@ -51,7 +52,11 @@ export class ProfileComponent implements OnInit {
 
 delete_request(key:any){
   console.log(key)
-  this.dataServ.delete_Request(key)
+  this.dataServ.delete_Request(key);
+      setTimeout(()=>{
+        window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
+      },2000)
+      this.toastr.success("deleted item successfully! ")
 }
 
 }
