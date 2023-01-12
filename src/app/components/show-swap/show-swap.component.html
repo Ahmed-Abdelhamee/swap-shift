@@ -13,7 +13,9 @@
                 <P class="text" *ngIf="item.have_shift !='' "><span class="text-info"> have shift :  </span> {{item.have_shift}}</P>
                 <P class="text" *ngIf="item.need_shift !='' "> <span class="text-info"> need shift  </span> {{item.need_shift}}</P>
                 <P class="text" *ngIf="item.shift_type !='' "> <span class="text-info"> shift type : </span> {{item.shift_type}}</P>
-                <P class="text" *ngIf="users[i].phone !='' "> <span class="text-info"> phone : </span> {{ users[i].phone}}</P>
+                <P class="text" *ngIf="users[i].phone !='' ">
+                     <span class="text-info"> phone : </span>
+                     <span> <a href="https://api.whatsapp.com/send?phone=+2{{users[i].phone}}" target="_blank"> {{ users[i].phone}}</a></span></P>
             </div>
         </div>
     </div>

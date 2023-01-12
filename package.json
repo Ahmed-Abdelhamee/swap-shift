@@ -1,6 +1,8 @@
 {
   "name": "swap-shifts",
-  "version": "0.0.0",
+  "version": "0.0.0","predeploy": [
+    "npm --prefix \"%RESOURCE_DIR%\" run lint"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
