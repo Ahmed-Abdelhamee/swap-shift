@@ -15,7 +15,14 @@ export class RegisterComponent implements OnInit {
 
   userExist:boolean=false;
 
-  constructor(private formbuilder:FormBuilder ,private route:Router , private auth:AuthService , private toastr: ToastrService , private routeServ:RoutersService) { }
+  constructor(private formbuilder:FormBuilder ,private route:Router , private auth:AuthService , private toastr: ToastrService , private routeServ:RoutersService) { 
+    if(localStorage.getItem('userID')){
+        this.userExist=true;
+      }else{
+        this.userExist=false;
+      }
+      setTimeout(()=>{this.route.navigate(['/home'])}, 2000)
+  }
   
   register=this.formbuilder.group({
     name:['',Validators.required],
@@ -42,12 +49,7 @@ export class RegisterComponent implements OnInit {
       console.log(this.register.value)
       this.toastr.success('sign up successfully !','welcome')
       this.auth.register( this.email , this.pass , this.register.value);
-      // if(localStorage.getItem('userID')){
-      //   this.userExist=true;
-      // }else{
-      //   this.userExist=false;
-      // }
-      // setTimeout(()=>{this.route.navigate(['/home'])}, 2000)
+      
       setTimeout(()=>{window.location.reload()}, 2000)
     }else{
       this.toastr.error('enter valid data ','error')
