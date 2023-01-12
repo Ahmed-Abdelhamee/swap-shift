@@ -2,6 +2,7 @@
 <div class="col-12 d-flex justify-content-center pt-5">
     <div class="card col-sm-4 p-4 login" data-aos="zoom-in" data-aos-duration="1000" *ngIf="!userExist">
         <h3 class="title">Sign In</h3>
+        <a (click)="routes('register')" class="registerLink">* let's create account *</a>
         <form [formGroup]="login" (ngSubmit)="login_data()">
           
           <div class="form-group">
@@ -20,7 +21,6 @@
             <button type="submit" class="btn btn-dark">Login</button>
           </div>
         </form>
-        <a (click)="routes('register')" class="registerLink">* let's create account *</a>
 
     </div>
 
