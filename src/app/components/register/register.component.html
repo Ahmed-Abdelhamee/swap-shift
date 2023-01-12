@@ -27,7 +27,7 @@
             </div>
             
             <div class="form-group">
-              <input type="password" [class.invalid]="register.get('ConfiremPass')?.invalid" class="form-control" id="pwd" placeholder="ConfiremPass Password" name="pswd" formControlName="ConfiremPass" required>
+              <input type="password" [class.invalid]="register.get('ConfiremPass')?.invalid" class="form-control" id="ConfiremPass" placeholder="ConfiremPass Password" name="pswd" formControlName="ConfiremPass" required>
               <div class="text-success" *ngIf="register.get('ConfiremPass')?.value==register.get('pass')?.value">Valid.</div>
               <div class="text-danger" *ngIf="register.get('ConfiremPass')?.value!=register.get('pass')?.value">not equal password .</div>
             </div>

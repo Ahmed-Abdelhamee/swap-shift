@@ -48,20 +48,17 @@ export class LoginComponent implements OnInit {
     signInWithEmailAndPassword( this.auth,this.email ,this.pass).then((log)=>{
       this.toastr.success("Login successfully ")
       localStorage.setItem("userID",log.user.uid)
-      this.authServ.user=log.user
-      // if(localStorage.getItem('userID')){
-      //   this.userExist=true;
-      // }else{
-      //   this.userExist=false;
-      // }
-      setTimeout(()=>{window.location.reload()}, 2000)
+      this.authServ.user=log.user;
+      setTimeout(()=>{
+            window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
+      }, 2000)
+      // setTimeout(()=>{window.location.reload()}, 2000)
     }).catch(err =>{
       this.toastr.error("Login Error ")
     })
   }
 
   letsGo(){
-    // window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
     this.routeServ.go_to('')
   }
 

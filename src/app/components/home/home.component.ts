@@ -96,7 +96,7 @@ export class HomeComponent implements OnInit {
 
     if(!localStorage.getItem('userID')){
         this.toastr.error('',"please login fristly");
-        setInterval(()=>{this.route.navigate(['/login'])}, 2000)
+        setTimeout(()=>{this.route.navigate(['/login'])}, 2000)
     }else{
       if( this.swap.valid ==true){
         this.dataServ.sendData(this.swap.value,this.swap_arr);

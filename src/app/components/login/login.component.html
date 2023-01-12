@@ -2,7 +2,9 @@
 <div class="col-12 d-flex justify-content-center pt-5">
     <div class="card col-sm-4 p-4 login" data-aos="zoom-in" data-aos-duration="500" *ngIf="!userExist">
         <h3 class="title">Sign In</h3>
-        <a (click)="routes('register')" class="registerLink">* let's create account *</a>
+        <p>
+          <a routerLink="/register" class="registerLink">* let's create account *</a>
+        </p>
         <form [formGroup]="login" (ngSubmit)="login_data()">
           
           <div class="form-group">
