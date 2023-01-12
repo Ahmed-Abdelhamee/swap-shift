@@ -4,6 +4,7 @@ import { Auth , createUserWithEmailAndPassword} from '@angular/fire/auth';
 import { Database} from '@angular/fire/database'; 
 import { Router } from '@angular/router';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,7 +14,7 @@ export class AuthService {
 
   user: any;
   userId:any;
-  constructor(public auth:Auth , private http : HttpClient , private database:Database, private route:Router) {
+  constructor(public auth:Auth , private http : HttpClient , private database:Database, private route:Router, private toastr:ToastrService) {
     this.userId=localStorage.getItem('userID')
     // console.log(this.user)
    }
@@ -24,7 +25,9 @@ export class AuthService {
       this.http.post(`${this.database.app.options.databaseURL}/users.json`,data).subscribe();
       localStorage.setItem("userID",log.user.uid);
       this.login( email, pass ) 
-    }).catch(err =>{console.log(err.message)})
+    }).catch(err =>{console.log(err.message);
+      this.toastr.error("sign up Error ")
+    })
   }
 
 
@@ -32,7 +35,6 @@ export class AuthService {
     signInWithEmailAndPassword( this.auth,email ,pass).then((log)=>{
       localStorage.setItem("userID",log.user.uid)
       this.user=log.user
-      setTimeout(()=>{window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")}, 1500)
     }).catch(err =>{
       console.log(err.message)
     })

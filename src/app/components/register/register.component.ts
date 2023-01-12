@@ -15,13 +15,7 @@ export class RegisterComponent implements OnInit {
 
   userExist:boolean=false;
 
-  constructor(private formbuilder:FormBuilder ,private route:Router , private auth:AuthService , private toastr: ToastrService , private routeServ:RoutersService) {
-    if(localStorage.getItem('userID')){
-      this.userExist=true;
-    }else{
-      this.userExist=false;
-    }
-   }
+  constructor(private formbuilder:FormBuilder ,private route:Router , private auth:AuthService , private toastr: ToastrService , private routeServ:RoutersService) { }
   
   register=this.formbuilder.group({
     name:['',Validators.required],
@@ -47,7 +41,12 @@ export class RegisterComponent implements OnInit {
     if(this.register.get('pass')?.value == this.register.get('ConfiremPass')?.value && this.register.valid){
       console.log(this.register.value)
       this.toastr.success('sign up successfully !','welcome')
-      this.auth.register( this.email , this.pass , this.register.value)
+      this.auth.register( this.email , this.pass , this.register.value);
+      if(localStorage.getItem('userID')){
+        this.userExist=true;
+      }else{
+        this.userExist=false;
+      }
       // setTimeout(()=>{this.route.navigate(['/home'])}, 2000)
       // setTimeout(()=>{window.location.reload()}, 2000)
     }else{
@@ -55,8 +54,8 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  routes(link:string){
-    this.routeServ.go_to(link)
+  letsGo(){
+    window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
   }
 
 }
