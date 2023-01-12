@@ -42,20 +42,21 @@ export class RegisterComponent implements OnInit {
       console.log(this.register.value)
       this.toastr.success('sign up successfully !','welcome')
       this.auth.register( this.email , this.pass , this.register.value);
-      if(localStorage.getItem('userID')){
-        this.userExist=true;
-      }else{
-        this.userExist=false;
-      }
+      // if(localStorage.getItem('userID')){
+      //   this.userExist=true;
+      // }else{
+      //   this.userExist=false;
+      // }
       // setTimeout(()=>{this.route.navigate(['/home'])}, 2000)
-      // setTimeout(()=>{window.location.reload()}, 2000)
+      setTimeout(()=>{window.location.reload()}, 2000)
     }else{
       this.toastr.error('enter valid data ','error')
     }
   }
 
   letsGo(){
-    window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
+    // window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
+    this.routeServ.go_to('')
   }
 
 }

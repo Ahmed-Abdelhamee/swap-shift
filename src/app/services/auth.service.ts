@@ -26,7 +26,7 @@ export class AuthService {
       localStorage.setItem("userID",log.user.uid);
       this.login( email, pass ) 
     }).catch(err =>{console.log(err.message);
-      this.toastr.error("sign up Error ")
+      // this.toastr.error("sign up Error ")
     })
   }
 

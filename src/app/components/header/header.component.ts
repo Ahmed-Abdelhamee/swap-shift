@@ -34,7 +34,8 @@ logOut(){
     this.auth.signOut().then(()=>{
       this.toastr.success("LogOut successfully ")
       localStorage.removeItem("userID");
-      setTimeout(()=>{window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")}, 2000)
+      setTimeout(()=>{window.location.reload()}, 2000)
+      // setTimeout(()=>{window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")}, 2000)
     }).catch(()=>{
       this.toastr.error("already LogOut")
       localStorage.removeItem("userID")
