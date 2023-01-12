@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../services/auth.service';
 import * as AOS from 'aos';
 import { Router } from '@angular/router';
+import { RoutersService } from 'src/app/services/routers.service';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
 
   userExist:boolean=false;
 
-  constructor(private formbuilder:FormBuilder ,private route:Router , private auth:AuthService , private toastr: ToastrService) {
+  constructor(private formbuilder:FormBuilder ,private route:Router , private auth:AuthService , private toastr: ToastrService , private routeServ:RoutersService) {
     if(localStorage.getItem('userID')){
       this.userExist=true;
     }else{
@@ -54,7 +55,8 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  
-
+  routes(link:string){
+    this.routeServ.go_to(link)
+  }
 
 }

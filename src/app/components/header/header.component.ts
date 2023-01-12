@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import * as $ from 'jquery';
 import { Observable } from 'rxjs';
+import { RoutersService } from 'src/app/services/routers.service';
 
 @Component({
   selector: 'app-header',
@@ -14,12 +15,19 @@ export class HeaderComponent implements OnInit {
 
     userId =  localStorage.getItem("userID");
 
-  constructor( private auth:Auth , private toastr: ToastrService, private authServ:AuthService) { }
+  constructor( private auth:Auth , private toastr: ToastrService, private authServ:AuthService, private routeServ:RoutersService) { }
 
   ngOnInit(): void {
     $(function(){
       $(".show_logOut").hide();
     });
+  }
+
+  routes(link:string){
+    this.routeServ.go_to(link)
+  }
+  SwapHome(){
+    window.location.reload()
   }
 
 logOut(){

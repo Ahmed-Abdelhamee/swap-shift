@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import * as AOS from 'aos'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Auth } from '@angular/fire/auth';
+import { RoutersService } from 'src/app/services/routers.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   userExist:boolean=false;
 
-  constructor(private formbuilder:FormBuilder , private auth:Auth , private toastr: ToastrService, private authServ:AuthService) { 
+  constructor(private formbuilder:FormBuilder , private auth:Auth , private toastr: ToastrService, private authServ:AuthService , private routeServ:RoutersService) { 
     if(localStorage.getItem('userID')){
       this.userExist=true;
     }else{
@@ -54,4 +55,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  routes(link:string){
+    this.routeServ.go_to(link)
+  }
 }

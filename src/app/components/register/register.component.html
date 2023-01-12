@@ -41,7 +41,7 @@
     <div class="col-sm-4" *ngIf="userExist">
       <div class="text-center">
         <img src="assets/let's go.png" alt="let's go" width="100%">
-        <a routerLink="/home">
+        <a (click)="routes('')">
           <button type="button" class="btn btnLetsGo"> Lets Go </button>
         </a>
       </div>

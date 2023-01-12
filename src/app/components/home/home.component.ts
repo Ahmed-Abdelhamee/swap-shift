@@ -7,6 +7,7 @@ import { user } from 'rxfire/auth';
 import { swap } from 'src/app/interfaces/swap.interface';
 import { users } from 'src/app/interfaces/users.interface';
 import { DataService } from 'src/app/services/data.service';
+import { RoutersService } from 'src/app/services/routers.service';
 
 @Component({
   selector: 'app-home',
@@ -29,7 +30,7 @@ export class HomeComponent implements OnInit {
 
   isUser:boolean=false;
 
-  constructor( private formbuilder:FormBuilder , private http:HttpClient , private dataServ:DataService , private toastr:ToastrService , private route:Router) {
+  constructor( private formbuilder:FormBuilder , private http:HttpClient , private dataServ:DataService , private toastr:ToastrService , private route:Router ,private routeServ:RoutersService) {
                 this.swap.patchValue({
                   userId:localStorage.getItem('userID')
                 })  
@@ -112,4 +113,8 @@ export class HomeComponent implements OnInit {
     }
   }
 
+
+  routes(link:string){
+    this.routeServ.go_to(link)
+  }
 }

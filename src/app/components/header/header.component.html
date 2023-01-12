@@ -18,18 +18,18 @@
         <ul class="nav">
           <li class="col-sm-2"></li>
             <li class="nav-item col-sm-8 d-flex justify-content-center">
-              <a class="nav-link active pageTitle" href=""> Swap your shift</a>
+              <a class="nav-link active pageTitle" (click)="routes('')"> Swap your shift</a>
             </li>
             <li class="nav-item col-sm-2 d-flex justify-content-end">
               <div class="toggle" *ngIf="userId">
                 <a class="pl-5"> <img class="Icon " (click)="toggle()" src="assets/man.png" alt="man"></a>
                 
                 <div class="show_logOut">
-                  <a routerLink="/profile" class="title">profile <span><img class="logout_Icon" src="assets/man.png" alt="logout"></span> </a>
+                  <a (click)="routes('profile')" class="title">profile <span><img class="logout_Icon" src="assets/man.png" alt="logout"></span> </a>
                 </div>
 
                 <div class="show_logOut" (click)="logOut()">
-                  <a routerLink="/login" class="title">LogOut <span><img class="logout_Icon"  style="margin-bottom: 1px;" src="assets/logout.png" alt="logout"></span> </a>
+                  <a  (click)="routes('')" class="title">LogOut <span><img class="logout_Icon"  style="margin-bottom: 1px;" src="assets/logout.png" alt="logout"></span> </a>
                 </div>
                 
               </div>
