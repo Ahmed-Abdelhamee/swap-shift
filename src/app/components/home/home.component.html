@@ -32,7 +32,7 @@
                         <input class="form-control time_Input" type="time"  formControlName="have_shift" name="time" id="time" >
                         <p class="shift"> شيفتك </p>
                     </div>
-                    <div *ngIf="shift && homeShiftType  && whereIsSelected && isUser">
+                    <div  class="form-group" *ngIf="shift && homeShiftType  && whereIsSelected && isUser">
                         <select class="form-control need_select" id="exampleFormControlSelect1"  formControlName="have_shift_type" name="have_shift_type" id="have_shift_type">
                             <option value="full" >كامل </option>
                             <option value="divided" >متقسم </option>
@@ -40,13 +40,11 @@
                         </select>
                         <p class="shift">نوع شيفتك </p>
                     </div>
-                </div>
-                <div class="col-12">
                     <div class="form-group" *ngIf="shift && whereIsSelected && isUser">
                         <input class="form-control time_Input" type="time" name="time" formControlName="need_shift" id="time">
                         <p class="shift">نيد  شيفت</p>
                     </div>
-                    <span *ngIf="shift && homeShiftType  && whereIsSelected && isUser">
+                    <span class="form-group" *ngIf="shift && homeShiftType  && whereIsSelected && isUser">
                         <select class="form-control need_select" id="exampleFormControlSelect1"  formControlName="shift_type" name="need" id="need">
                             <option value="full" >كامل </option>
                             <option value="divided" >متقسم </option>
@@ -59,6 +57,7 @@
                         <p class="shift">  نيد اليوم </p>
                     </div>
                 </div>
+                
 
                 <div class="d-flex justify-content-center">
                     <button type="submit" class=" Submit"> Swap</button>

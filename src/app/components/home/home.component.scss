@@ -15,12 +15,12 @@
     div div .notify_sign{
         font-size: 16px;
     }
-    div div div .form-group{
-        margin-bottom: 5px;
-    }
+    // div div div .form-group{
+    //     padding-bottom: 10px;
+    // }
     div div div div .shift{
         font-size: 12px;
-        padding-top: 0px;
+        padding-top: 7px;
         margin-left: 5px;
     }
     div div div div .date{
@@ -40,6 +40,7 @@
         text-align: center;
         width: 75%;
         float: left;
+        margin-bottom: 12px;
     }
   }
 
@@ -99,6 +100,7 @@ option{
     color: white;
     text-align: center;
     padding: 2px;
+    padding-top: 5px;
     font-size: 20px;
 }
 
