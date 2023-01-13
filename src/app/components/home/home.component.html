@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group" *ngIf="shift && whereIsSelected && isUser">
                         <input class="form-control time_Input" type="time"  formControlName="have_shift" name="time" id="time" >
-                        <p class="shift"> شيفتك </p>
+                        <p class="shift shift-phone"> شيفتك </p>
                     </div>
                     <div  class="form-group" *ngIf="shift && homeShiftType  && whereIsSelected && isUser">
                         <select class="form-control need_select" id="exampleFormControlSelect1"  formControlName="have_shift_type" name="have_shift_type" id="have_shift_type">
@@ -38,11 +38,11 @@
                             <option value="divided" >متقسم </option>
                             <!-- <option value="{{item}}"*ngFor="let item of shift_Time ; let i=index" >{{item}}</option> -->
                         </select>
-                        <p class="shift">نوع شيفتك </p>
+                        <p class="shift shift-phone">نوع شيفتك </p>
                     </div>
                     <div class="form-group" *ngIf="shift && whereIsSelected && isUser">
                         <input class="form-control time_Input" type="time" name="time" formControlName="need_shift" id="time">
-                        <p class="shift">نيد  شيفت</p>
+                        <p class="shift shift-phone">نيد  شيفت</p>
                     </div>
                     <span class="form-group" *ngIf="shift && homeShiftType  && whereIsSelected && isUser">
                         <select class="form-control need_select" id="exampleFormControlSelect1"  formControlName="shift_type" name="need" id="need">
@@ -50,11 +50,11 @@
                             <option value="divided" >متقسم </option>
                             <!-- <option value="{{item}}"*ngFor="let item of shift_Time ; let i=index" >{{item}}</option> -->
                         </select>
-                        <p class="shift">نيد نوع الشيفت </p>
+                        <p class="shift shift-phone">نيد نوع الشيفت </p>
                     </span>
                     <div class="form-group" *ngIf="holiday && whereIsSelected && isUser">
                         <input class="form-control date_Input" type="date" formControlName="need_day" name="date" id="date"> 
-                        <p class="shift">  نيد اليوم </p>
+                        <p class="shift shift-phone">  نيد اليوم </p>
                     </div>
                 </div>
                 
