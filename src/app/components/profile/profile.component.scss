@@ -3,11 +3,14 @@
 }
 @media only screen and (max-width: 600px) {
     .container{
-    background-image: url(https://www.canarydoctor.com/wp-content/uploads/telefono-emergencias-300x200.png);
+    // background-image: url(https://www.canarydoctor.com/wp-content/uploads/telefono-emergencias-300x200.png);
     background-size: cover;
+    background-color: rgb(43, 92, 92);
+    margin-bottom: -150px;
     }
     div .card{
-        height: 325px;
+        height: 370px;
+        border-radius: 10px;
     }
 }
 .wait{
