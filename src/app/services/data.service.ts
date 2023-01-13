@@ -36,6 +36,7 @@ export class DataService {
       item.SwapType == data.SwapType &&
       item.have_day == data.have_day &&
       item.have_shift == data.have_shift &&
+      item.have_shift_type == data.have_shift_type &&
       item.need_day == data.need_day &&
       item.need_shift == data.need_shift &&
       item.shift_type == data.shift_type &&
@@ -107,7 +108,7 @@ export class DataService {
     let swapShift ="shift";
     console.log(swap_array)
     if(swap_Object.SwapType==swapShift){
-       get_swapResult_arr = swap_array.filter( item => ( item.SwapType==swap_Object.SwapType && item.where==swap_Object.where && item.have_shift === swap_Object.need_shift && item.have_day=== swap_Object.have_day  && item.need_shift === swap_Object.have_shift))
+       get_swapResult_arr = swap_array.filter( item => ( item.SwapType==swap_Object.SwapType && item.where==swap_Object.where && item.have_shift === swap_Object.need_shift && item.have_shift_type === swap_Object.shift_type && item.have_day=== swap_Object.have_day  && item.need_shift === swap_Object.have_shift  && item.shift_type === swap_Object.have_shift_type ))
        console.log(get_swapResult_arr)
        return get_swapResult_arr ;
       }else{

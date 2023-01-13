@@ -41,13 +41,27 @@ span{
 .card{
     box-shadow: inset -2px -2px 5px rgb(144, 183, 254) , 2px 2px 5px rgb(144, 183, 254) ,;
 }
-.text{
+.small-title{
+    color: #8b005f;
     font-size: 18px;
+    font-weight: 700;
+    font-family: "Lobster", cursive;
+    text-align: center;
+}
+.text{
+    font-size: 15px;
     font-weight: 600;
 }
 .send_icon{
     height: 200px;
     width: 200px;
+}
+.whats{
+    height: 25px;
+    width: 25px;
+}
+.whatsLink{
+    margin-left: 15px;
 }
 .notify{
     font-size: 20px;

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ZfooterComponent } from './zfooter.component';
+import { ProblemsComponent } from './problems.component';
 
-describe('ZfooterComponent', () => {
-  let component: ZfooterComponent;
-  let fixture: ComponentFixture<ZfooterComponent>;
+describe('ProblemsComponent', () => {
+  let component: ProblemsComponent;
+  let fixture: ComponentFixture<ProblemsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ZfooterComponent ]
+      declarations: [ ProblemsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ZfooterComponent);
+    fixture = TestBed.createComponent(ProblemsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

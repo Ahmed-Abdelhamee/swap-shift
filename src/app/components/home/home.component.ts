@@ -48,6 +48,7 @@ export class HomeComponent implements OnInit {
     SwapType:['',Validators.required],
     have_day:['',Validators.required],
     have_shift:[''],
+    have_shift_type:[''],
     need_shift:[''],
     shift_type:[''],
     need_day:[''],
@@ -63,7 +64,8 @@ export class HomeComponent implements OnInit {
       if(event.target.value=='site'){
         this.homeShiftType=false;
         this.swap.patchValue({
-          shift_type:''
+          shift_type:'',
+          have_shift_type:''
         })
       }else{
         this.homeShiftType=true
@@ -79,6 +81,7 @@ export class HomeComponent implements OnInit {
         have_shift:'',
         need_shift:'',
         shift_type:'',
+        have_shift_type:''
       })
     }else{
       this.shift=true;
@@ -89,7 +92,6 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  
   
   // function for save user request 
   saveSwap(){

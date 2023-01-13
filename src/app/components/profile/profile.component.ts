@@ -54,9 +54,14 @@ delete_request(key:any){
   console.log(key)
   this.dataServ.delete_Request(key);
       setTimeout(()=>{
-        window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
+        window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self");
+        // window.location.reload()
       },2000)
       this.toastr.success("deleted item successfully! ")
 }
+
+// request(item:swap){
+
+// }
 
 }

@@ -32,6 +32,14 @@
                         <input class="form-control time_Input" type="time"  formControlName="have_shift" name="time" id="time" >
                         <p class="shift"> شيفتك </p>
                     </div>
+                    <div *ngIf="shift && homeShiftType  && whereIsSelected && isUser">
+                        <select class="form-control need_select" id="exampleFormControlSelect1"  formControlName="have_shift_type" name="have_shift_type" id="have_shift_type">
+                            <option value="full" >كامل </option>
+                            <option value="divided" >متقسم </option>
+                            <!-- <option value="{{item}}"*ngFor="let item of shift_Time ; let i=index" >{{item}}</option> -->
+                        </select>
+                        <p class="shift">نوع شيفتك </p>
+                    </div>
                 </div>
                 <div class="col-12">
                     <div class="form-group" *ngIf="shift && whereIsSelected && isUser">
@@ -44,7 +52,7 @@
                             <option value="divided" >متقسم </option>
                             <!-- <option value="{{item}}"*ngFor="let item of shift_Time ; let i=index" >{{item}}</option> -->
                         </select>
-                        <p class="shift">نوع الشيفت </p>
+                        <p class="shift">نيد نوع الشيفت </p>
                     </span>
                     <div class="form-group" *ngIf="holiday && whereIsSelected && isUser">
                         <input class="form-control date_Input" type="date" formControlName="need_day" name="date" id="date"> 

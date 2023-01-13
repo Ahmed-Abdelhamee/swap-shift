@@ -28,6 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from "@angular/common/http";
 import { ProfileComponent } from './components/profile/profile.component';
 import { ShowSwapComponent } from './components/show-swap/show-swap.component';
+import { ProblemsComponent } from './components/problems/problems.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { ShowSwapComponent } from './components/show-swap/show-swap.component';
     LoginComponent,
     ProfileComponent,
     ShowSwapComponent,
+    ProblemsComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,

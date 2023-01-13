@@ -20,6 +20,7 @@
                 <P class="text" *ngIf="item.shift_type !='' "> <span class="text-info"> shift type : </span> {{item.shift_type}}</P>
                 <P class="text" > <span class="text-info"> phone : </span> {{ user.phone}}</P>
                 <div class="text-center">
+                    <!-- <button class="btn btn-outline-info" (click)="request(item)">request</button> -->
                     <button class="btn btn-outline-danger" (click)="delete_request(item.key!)">delete</button>
                 </div>
             </div>

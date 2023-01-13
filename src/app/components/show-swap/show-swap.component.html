@@ -1,11 +1,12 @@
 <div class="col-12 content">
     <div class="col-12 d-flex justify-content-center">
-        <small class="notifys pt-2">لا تظهر الشيفتات او الاجازات المطلوبة في الشهر الماضي </small>
+        <!-- <small class="notifys pt-2">لا تظهر الشيفتات او الاجازات المطلوبة في الشهر الماضي </small> -->
     </div>
     <div class="col-12"  *ngIf=" swap.length != 0 ">
         
         <div class="col-sm-3 p-3" *ngFor="let item of swap ; let i=index">
             <div class="card p-3">
+                <p class="small-title">your friend request</p>
                 <P class="text" *ngIf="item.SwapType !='' "> <span class="text-info"> SwapType : </span> {{item.SwapType}}</P>
                 <P class="text" *ngIf="item.where !='' "> <span class="text-info"> where :  </span> {{item.where}}</P>
                 <P class="text" *ngIf="item.have_day !='' "> <span class="text-info"> have day : </span> {{item.have_day}}</P>
@@ -15,7 +16,9 @@
                 <P class="text" *ngIf="item.shift_type !='' "> <span class="text-info"> shift type : </span> {{item.shift_type}}</P>
                 <P class="text" *ngIf="users[i].phone !='' ">
                      <span class="text-info"> phone : </span>
-                     <span> <a href="https://api.whatsapp.com/send?phone=+2{{users[i].phone}}" target="_blank"> {{ users[i].phone}}</a></span></P>
+                     <span> <a href="https://api.whatsapp.com/send?phone=+2{{users[i].phone}}" class="whatsLink" target="_blank"> {{ users[i].name}}
+                        <img src="assets/whatsapp.png" alt="whats" class="whats">
+                     </a></span></P>
             </div>
         </div>
     </div>
@@ -23,7 +26,7 @@
     <div class="col-12 d-flex justify-content-center show_frist_Request" *ngIf="swap.length == 0 ">
         <div class="col-sm-5  text-center">
             <img src="https://cdn-icons-png.flaticon.com/512/5393/5393248.png" alt="" class="send_icon">
-            <p class="notify">طلبك قيد المراجعة سيتم  التواصل معك في اقرب وقت لمن يدريد التبديل معك  ان شاء الله</p>
+            <p class="notify">طلبك قيد المراجعة سيتم  التواصل معك في اقرب وقت لمن يريد التبديل معك  ان شاء الله</p>
             <p class="alert alert-success thanks"> <span> swap your shift </span>  شكرا لاستخدامك</p>
         </div>
     </div>

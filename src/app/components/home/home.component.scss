@@ -3,6 +3,7 @@
         background-image: url(https://www.canarydoctor.com/wp-content/uploads/telefono-emergencias-300x200.png);
         background-size: 100%;
         background-repeat: repeat;
+        padding-bottom: 210px;
     }
     
     div .form_collection {
@@ -44,7 +45,6 @@
 
 .content{
     padding-top: 60px;
-    padding-bottom: 150px;
     margin-bottom: -150px;
     background-size: 100%;
     background-image: url(https://images.unsplash.com/photo-1560264280-88b68371db39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FsbCUyMGNlbnRlcnxlbnwwfHwwfHw%3D&w=1000&q=80);
@@ -54,6 +54,7 @@
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
+    padding-bottom: 200px;
 }
 // @keyframes swap_bg{
 //     0% {background-image: url(/assets/callcenter2.png);}
@@ -84,7 +85,7 @@
     padding-bottom: 10px;
 }
 .form-group{
-    padding-bottom: 5px;
+    padding-bottom: 0px;
 }
 select{
     width: 50%; float: left; text-align: center;
