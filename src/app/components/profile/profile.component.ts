@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { profileRequsts } from 'src/app/interfaces/profile-requests.interface';
 import { swap } from 'src/app/interfaces/swap.interface';
@@ -14,20 +15,29 @@ export class ProfileComponent implements OnInit {
 
   user_requests_keys:string[]=[];
   user_requests:profileRequsts[]=[];
-  users:users[]=[]
+  _users:users[]=[]
   user:any
   wait:boolean=false;
 
-  constructor(private dataServ : DataService , private toastr:ToastrService) {
+  // arrays 
+  swap_arr:swap[]=[];
+  users:users[]=[];
+
+
+  constructor(private dataServ : DataService , private toastr:ToastrService , private route:Router) {
     dataServ.getUsers().subscribe(data =>{
       for (const key in data) {
         if (Object.prototype.hasOwnProperty.call(data, key)) {
           const element = data[key];
-          this.users.push(element)
+          this._users.push(element)
         }
       }
-      this.user=this.users.find(item => item.userID==localStorage.getItem('userID'))
+      this.user=this._users.find(item => item.userID==localStorage.getItem('userID'))
     })
+
+    this.swap_arr = dataServ.set_Swap_dataArr(); // we call it here because we build it in service
+    this.users = dataServ.add_Users_in_arr(); // we call it here because we build it in service 
+
    }
 
   ngOnInit(): void {
@@ -60,8 +70,26 @@ delete_request(key:any){
       this.toastr.success("deleted item successfully! ")
 }
 
-// request(item:swap){
-
-// }
+request(data:profileRequsts){
+  let item:swap={
+    where:data.where,
+    SwapType:data.SwapType,
+    have_day:data.have_day,
+    have_shift:data.have_shift,
+    have_shift_type:data.have_shift_type,
+    need_shift:data.need_shift,
+    shift_type:data.shift_type,
+    need_day:data.need_day,
+    userId:data.userId
+  }
+  this.dataServ.sendData(item,this.swap_arr);
+  let swap_result = this.dataServ.filters(item , this.swap_arr);
+  let swappers=this.dataServ.get_theSwaper_arr(swap_result)
+  this.dataServ.shareSwap(swap_result,swappers);
+  console.log(item)
+  console.log(swap_result)
+  console.log(swappers)
+  this.route.navigate(['/show-swap']);
+}
 
 }
