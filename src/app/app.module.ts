@@ -30,6 +30,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ShowSwapComponent } from './components/show-swap/show-swap.component';
 import { ProblemsComponent } from './components/problems/problems.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { ForgetPassComponent } from './components/forget-pass/forget-pass.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     ShowSwapComponent,
     ProblemsComponent,
     FeedbackComponent,
+    ForgetPassComponent,
   ],
   imports: [
     BrowserModule,

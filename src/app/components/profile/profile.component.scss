@@ -12,6 +12,15 @@
         height: 390px;
         border-radius: 10px;
     }
+    div .card .btn{
+        margin-bottom: 10px;
+    }
+}
+.container{
+    background-color: rgb(72, 127, 131);
+    padding-bottom: 100px;
+    margin-bottom: -150px;
+
 }
 .wait{
     position: fixed;
@@ -36,6 +45,7 @@
 }
 .card{
     height: 380px;
+    border-radius: 10px;
 }
 .btn-outline-info{
     margin-right: 15px;

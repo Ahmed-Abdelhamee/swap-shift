@@ -49,12 +49,13 @@ export class LoginComponent implements OnInit {
       this.toastr.success("Login successfully ")
       localStorage.setItem("userID",log.user.uid)
       this.authServ.user=log.user;
-      setTimeout(()=>{
-            window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
-            // // window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
-            // // window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
-      }, 2000)
-      // setTimeout(()=>{window.location.reload()}, 2000)
+      // setTimeout(()=>{
+      //       window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
+            
+      //       // // window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
+      //       // // window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
+      // }, 2000);
+      setTimeout(()=>{window.location.reload()}, 2000);
     }).catch(err =>{
       this.toastr.error("Login Error ")
     })

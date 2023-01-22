@@ -1,0 +1,21 @@
+[class*="col-"] {
+    width: 100%;
+    float: left;
+}
+
+
+.card{
+    box-shadow: -2px -2px 10px rgb(185, 102, 102) , 2px 2px 10px rgb(207, 127, 127);
+}
+
+.text-danger{
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 20px;
+    font-family:serif;
+    font-style: italic;
+}
+.btn{
+    font-size: 14px;
+    margin: 20px;
+}

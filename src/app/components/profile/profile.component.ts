@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { findIndex } from 'rxjs';
 import { profileRequsts } from 'src/app/interfaces/profile-requests.interface';
 import { swap } from 'src/app/interfaces/swap.interface';
 import { users } from 'src/app/interfaces/users.interface';
+import { AuthService } from 'src/app/services/auth.service';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -23,8 +25,12 @@ export class ProfileComponent implements OnInit {
   swap_arr:swap[]=[];
   users:users[]=[];
 
+  // update 
+  user_update_name:string='';
+  user_update_phone:string='';
 
-  constructor(private dataServ : DataService , private toastr:ToastrService , private route:Router) {
+
+  constructor(private dataServ : DataService , private toastr:ToastrService , private route:Router , private authServ:AuthService) {
     dataServ.getUsers().subscribe(data =>{
       for (const key in data) {
         if (Object.prototype.hasOwnProperty.call(data, key)) {
@@ -34,7 +40,8 @@ export class ProfileComponent implements OnInit {
       }
       this.user=this._users.find(item => item.userID==localStorage.getItem('userID'))
     })
-
+    this.swap_arr=[]
+    this.users=[]
     this.swap_arr = dataServ.set_Swap_dataArr(); // we call it here because we build it in service
     this.users = dataServ.add_Users_in_arr(); // we call it here because we build it in service 
 
@@ -55,20 +62,11 @@ export class ProfileComponent implements OnInit {
       }
     this.wait=false;
     this.user_requests=this.user_requests.filter(item => (item.userId == localStorage.getItem('userID')))
-    console.log(this.user_requests)
+    // console.log(this.user_requests)
     })
 
 }
 
-delete_request(key:any){
-  console.log(key)
-  this.dataServ.delete_Request(key);
-      setTimeout(()=>{
-        window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self");
-        // window.location.reload()
-      },2000)
-      this.toastr.success("deleted item successfully! ")
-}
 
 request(data:profileRequsts){
   let item:swap={
@@ -89,7 +87,40 @@ request(data:profileRequsts){
   console.log(item)
   console.log(swap_result)
   console.log(swappers)
+  console.log(this.swap_arr)
+  console.log(this.users)
   this.route.navigate(['/show-swap']);
 }
 
+
+delete_request(key:any){
+  console.log(key)
+  this.dataServ.delete_Request(key);
+      setTimeout(()=>{
+        // window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self");
+        window.location.reload()
+      },2000)
+      this.toastr.success("deleted item successfully! ")
+}
+
+
+change_pesonal_data(){
+  // this.authServ.change_personal_data();
+  let keys : string[]=[]
+
+  this.dataServ.getUsers().subscribe(data =>{
+    for (const key in data) {
+      if (Object.prototype.hasOwnProperty.call(data, key)) {
+        const element = data[key];
+        keys.push(key)
+      }
+    }
+
+  this.authServ.change_personal_data(keys[(this.dataServ.add_Users_in_arr().findIndex(item => this.user.email == item.email))],this.user, this.user_update_name , this.user_update_phone)
+  console.log(keys[(this.dataServ.add_Users_in_arr().findIndex(item => this.user.email == item.email))])
+  console.log(this.user)
+
+  })
+
+}
 }

@@ -45,7 +45,7 @@ export class DataService {
     ))
     console.log(find_swap_before)
     if(!find_swap_before){
-      this.http.post(`${this.url}/swap_${this.Date.getMonth()+1}.json`,data).subscribe(id=>{console.log(id)});
+      this.http.post(`${this.url}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}.json`,data).subscribe(id=>{console.log(id)});
       console.log('swap not exist before')
     }
     this.swap_arr=[]//for remove the data saved before in this array and prevent it to be duplicated when we call set_Swap_data_arr() again ;
@@ -53,7 +53,7 @@ export class DataService {
 
   //  ------------------------  get array of swap request ---------------------------
   getData():Observable<swap[]>{
-    return this.http.get<swap[]>(`${this.url}/swap_${this.Date.getMonth()+1}.json`)
+    return this.http.get<swap[]>(`${this.url}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}.json`)
   }
   set_Swap_dataArr(){
     this.getData().subscribe( data =>{
@@ -72,6 +72,7 @@ export class DataService {
     return this.http.get<users[]>(`${this.url}/users.json`)
   }
   add_Users_in_arr(){
+    this.users=[]//for remove the data saved before in this array and prevent it to be duplicated when we call add_Users_in_arr() again ;
     this.getUsers().subscribe( data =>{
       for (const key in data) {
         if (Object.prototype.hasOwnProperty.call(data, key)) {
@@ -109,11 +110,10 @@ export class DataService {
     console.log(swap_array)
     if(swap_Object.SwapType==swapShift){
        get_swapResult_arr = swap_array.filter( item => ( item.SwapType==swap_Object.SwapType && item.where==swap_Object.where && item.have_shift === swap_Object.need_shift && item.have_shift_type === swap_Object.shift_type && item.have_day=== swap_Object.have_day  && item.need_shift === swap_Object.have_shift  && item.shift_type === swap_Object.have_shift_type ))
-       console.log(get_swapResult_arr)
        return get_swapResult_arr ;
       }else{
         get_swapResult_arr = swap_array.filter( item => ( item.SwapType==swap_Object.SwapType && item.where==swap_Object.where && item.have_day== swap_Object.need_day && item.need_day== swap_Object.have_day))
-        return  get_swapResult_arr ; 
+       return  get_swapResult_arr ; 
       }
   }
   get_theSwaper_arr(swap_array_result:swap[]){
@@ -132,7 +132,7 @@ export class DataService {
   }
 
   delete_Request(key:any){
-    this.http.delete(`${this.database.app.options.databaseURL}/swap_${this.Date.getMonth()+1}/${key}.json`).subscribe(()=> {} )
+    this.http.delete(`${this.database.app.options.databaseURL}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}/${key}.json`).subscribe(()=> {} )
   }
 }
 

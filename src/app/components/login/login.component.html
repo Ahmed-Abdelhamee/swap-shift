@@ -6,24 +6,24 @@
           <a routerLink="/register" class="registerLink">* let's create account *</a>
         </p>
         <form [formGroup]="login" (ngSubmit)="login_data()">
-          
           <div class="form-group">
             <input type="email" class="form-control"  placeholder=" Email" name="email" formControlName="email" required>
             <div class="text-success" *ngIf="login.get('email')?.valid">Valid.</div>
             <div class="text-danger" *ngIf="login.get('email')?.invalid">Please enter email .</div>
           </div>
-
           <div class="form-group">
               <input type="password" [class.invalid]="login.get('pass')?.invalid" class="form-control" id="pwd" placeholder="Password" name="pswd" formControlName="pass" required>
               <div class="text-success" *ngIf="login.get('pass')?.valid">Valid.</div>
               <div class="text-danger" *ngIf="login.get('pass')?.invalid">Please fill with min length 6 .</div>
           </div>
-            
           <div class="text-center">
             <button type="submit" class="btn btn-dark">Login</button>
           </div>
         </form>
 
+        <p>
+          <a routerLink="/forget-pass" class="registerLink"> forget pass ?</a>
+        </p>
     </div>
 
     <div class="col-sm-4" *ngIf="userExist">
@@ -34,6 +34,7 @@
         </a>
       </div>
     </div>
+
 </div>
 
 
