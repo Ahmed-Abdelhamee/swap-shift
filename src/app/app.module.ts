@@ -31,6 +31,7 @@ import { ShowSwapComponent } from './components/show-swap/show-swap.component';
 import { ProblemsComponent } from './components/problems/problems.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ForgetPassComponent } from './components/forget-pass/forget-pass.component';
+import { AdminComponent } from './_Admin/admin/admin.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { ForgetPassComponent } from './components/forget-pass/forget-pass.compon
     ProblemsComponent,
     FeedbackComponent,
     ForgetPassComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

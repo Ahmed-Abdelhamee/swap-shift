@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit {
                 this.users = dataServ.add_Users_in_arr(); // we call it here because we build it in service 
                 //and when we need to use the source to fill arrays we copy the source here in  constructor()
                 this.isUser=(localStorage.getItem('userID')) ? true : false
-                console.log(this.isUser)
           }
 
 

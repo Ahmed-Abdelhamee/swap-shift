@@ -84,11 +84,11 @@ request(data:profileRequsts){
   let swap_result = this.dataServ.filters(item , this.swap_arr);
   let swappers=this.dataServ.get_theSwaper_arr(swap_result)
   this.dataServ.shareSwap(swap_result,swappers);
-  console.log(item)
-  console.log(swap_result)
-  console.log(swappers)
-  console.log(this.swap_arr)
-  console.log(this.users)
+  // console.log(item)
+  // console.log(swap_result)
+  // console.log(swappers)
+  // console.log(this.swap_arr)
+  // console.log(this.users)
   this.route.navigate(['/show-swap']);
 }
 

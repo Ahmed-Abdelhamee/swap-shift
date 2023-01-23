@@ -43,7 +43,6 @@ export class DataService {
       item.userId == data.userId &&
       item.where == data.where
     ))
-    console.log(find_swap_before)
     if(!find_swap_before){
       this.http.post(`${this.url}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}.json`,data).subscribe(id=>{console.log(id)});
       console.log('swap not exist before')
@@ -56,6 +55,7 @@ export class DataService {
     return this.http.get<swap[]>(`${this.url}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}.json`)
   }
   set_Swap_dataArr(){
+    this.swap_arr=[]
     this.getData().subscribe( data =>{
       for (const key in data) {
         if (Object.prototype.hasOwnProperty.call(data, key)) {
@@ -107,7 +107,6 @@ export class DataService {
   filters(swap_Object:swap , swap_array:swap[]){
     let get_swapResult_arr : any[]=[];
     let swapShift ="shift";
-    console.log(swap_array)
     if(swap_Object.SwapType==swapShift){
        get_swapResult_arr = swap_array.filter( item => ( item.SwapType==swap_Object.SwapType && item.where==swap_Object.where && item.have_shift === swap_Object.need_shift && item.have_shift_type === swap_Object.shift_type && item.have_day=== swap_Object.have_day  && item.need_shift === swap_Object.have_shift  && item.shift_type === swap_Object.have_shift_type ))
        return get_swapResult_arr ;

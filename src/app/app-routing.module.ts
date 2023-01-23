@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:"feedback",component:FeedbackComponent},
   {path:"forget-pass",component:ForgetPassComponent},
 
-  {path:"a",component:AdminComponent},
+  {path:"ad-medo-min",component:AdminComponent},
   // {path:"adm-ahmed-min",component:AdminComponent},
   // {path:"",component:},
 ];
