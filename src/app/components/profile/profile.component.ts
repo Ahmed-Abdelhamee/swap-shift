@@ -98,7 +98,8 @@ delete_request(key:any){
   this.dataServ.delete_Request(key);
       setTimeout(()=>{
         // window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self");
-        window.location.reload()
+        // window.location.reload()
+        this.route.navigate(['/'])
       },2000)
       this.toastr.success("deleted item successfully! ")
 }

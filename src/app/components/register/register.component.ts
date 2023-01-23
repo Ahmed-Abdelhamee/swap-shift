@@ -52,8 +52,8 @@ export class RegisterComponent implements OnInit {
       //   window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
       // }, 2000);
 
-      // setTimeout(()=>{this.route.navigate(['/home'])}, 2000)
-      setTimeout(()=>{window.location.reload()}, 2000);
+      setTimeout(()=>{this.route.navigate(['/home'])}, 2000)
+      // setTimeout(()=>{window.location.reload()}, 2000);
       console.log('register')
     }else{
       this.toastr.error('enter valid data ','error')
