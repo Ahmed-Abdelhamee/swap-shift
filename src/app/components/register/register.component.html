@@ -1,7 +1,7 @@
 <app-header></app-header>
 
-<div class="col-12 d-flex justify-content-center pt-5">
-    <div class="card col-sm-4 p-4 register" data-aos="zoom-in" data-aos-duration="500"  *ngIf="!userExist">
+<div class="col-12 d-flex justify-content-center pt-5 content">
+    <div class="card col-sm-4 p-4 register" *ngIf="!userExist">
         <h3 class="title">Create Account</h3>
         <form [formGroup]="register" (ngSubmit)="regist()">
           <div class="form-group">
@@ -39,14 +39,6 @@
           </form>
     </div>
 
-    <div class="col-sm-4" *ngIf="userExist">
-      <div class="text-center">
-        <img src="assets/let's go.png" alt="let's go" width="100%">
-        <a (click)="letsGo()">
-          <button type="button" class="btn btnLetsGo"> Lets Go </button>
-        </a>
-      </div>
-    </div>
 </div>
 
 

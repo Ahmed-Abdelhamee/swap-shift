@@ -60,8 +60,5 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  letsGo(){
-    this.routeServ.go_to('')
-  }
-
+ 
 }
