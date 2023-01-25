@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ForgetPassComponent } from './components/forget-pass/forget-pass.component';
 import { HomeComponent } from './components/home/home.component';
+import { LetsGoComponent } from './components/lets-go/lets-go.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProblemsComponent } from './components/problems/problems.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -20,9 +21,9 @@ const routes: Routes = [
   {path:"problems",component:ProblemsComponent},
   {path:"feedback",component:FeedbackComponent},
   {path:"forget-pass",component:ForgetPassComponent},
+  {path:"let's-go",component:LetsGoComponent},
 
-  {path:"ad-medo-min",component:AdminComponent},
-  // {path:"adm-ahmed-min",component:AdminComponent},
+  {path:"ad-medologin-min",component:AdminComponent},
   // {path:"",component:},
 ];
 

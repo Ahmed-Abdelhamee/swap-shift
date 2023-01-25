@@ -16,14 +16,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  userExist:boolean=false;
 
   constructor(private formbuilder:FormBuilder , private auth:Auth , private toastr: ToastrService, private authServ:AuthService , private routeServ:RoutersService ,private route:Router) {  
-    if(localStorage.getItem('userID')){
-      this.userExist=true;
-    }else{
-      this.userExist=false;
-    }
+    
   }
 
 
@@ -56,15 +51,11 @@ export class LoginComponent implements OnInit {
       //       // // window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
       //       // // window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
       // }, 2000);
-      setTimeout(()=>{this.route.navigate(['/'])}, 2000);
+      setTimeout(()=>{this.route.navigate(["/let's-go"])}, 2000);
       // setTimeout(()=>{window.location.reload()}, 2000);
     }).catch(err =>{
       this.toastr.error("Login Error ")
     })
-  }
-
-  letsGo(){
-    this.routeServ.go_to('')
   }
 
   routes(link:string){

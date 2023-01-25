@@ -32,6 +32,7 @@ import { ProblemsComponent } from './components/problems/problems.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ForgetPassComponent } from './components/forget-pass/forget-pass.component';
 import { AdminComponent } from './_Admin/admin/admin.component';
+import { LetsGoComponent } from './components/lets-go/lets-go.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { AdminComponent } from './_Admin/admin/admin.component';
     ProblemsComponent,
     FeedbackComponent,
     ForgetPassComponent,
-    AdminComponent
+    AdminComponent,
+    LetsGoComponent
   ],
   imports: [
     BrowserModule,
