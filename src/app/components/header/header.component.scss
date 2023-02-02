@@ -41,6 +41,7 @@
     word-spacing: 10px;
     font-family:  'Lobster', cursive;
     cursor: pointer;
+    z-index: 2;
 }
 
 .Icon{
@@ -73,6 +74,10 @@
     width: 30px;
     height: 30px;
 }
+.view-shifts-div{
+    padding-left: 20px;
+}
+
 .btn_logOut{
     background-color: #962071;
     // border: none;

@@ -33,6 +33,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ForgetPassComponent } from './components/forget-pass/forget-pass.component';
 import { AdminComponent } from './_Admin/admin/admin.component';
 import { LetsGoComponent } from './components/lets-go/lets-go.component';
+import { ViewShiftsComponent } from './components/view-shifts/view-shifts.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { LetsGoComponent } from './components/lets-go/lets-go.component';
     FeedbackComponent,
     ForgetPassComponent,
     AdminComponent,
-    LetsGoComponent
+    LetsGoComponent,
+    ViewShiftsComponent
   ],
   imports: [
     BrowserModule,

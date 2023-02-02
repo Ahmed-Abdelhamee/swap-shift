@@ -52,7 +52,7 @@ export class AuthService {
       userID:userData.userID
     }
 
-    this.http.put(`${this.database.app.options.databaseURL}/users/${user_key}.json`,user_update_view).subscribe( () => {this.toastr.success(`changed successfully`,'done! '); setTimeout(()=>{window.location.reload()},2000)})
+    this.http.put(`${this.database.app.options.databaseURL}/users/${user_key}.json`,user_update_view).subscribe( () => {this.toastr.success(`changed successfully`,'done! '); setTimeout(()=>{ this.route.navigate(['/']) },2000)})
 
     // sendEmailVerification(this.auth.currentUser!).then( ()=>{
     //   this.http.put(`${this.database.app.options.databaseURL}/users/${user_key}.json`,user_update_view).subscribe( () => this.toastr.success(`verify ${user_update_view.email}`,'done! '))

@@ -9,6 +9,7 @@ import { ProblemsComponent } from './components/problems/problems.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ShowSwapComponent } from './components/show-swap/show-swap.component';
+import { ViewShiftsComponent } from './components/view-shifts/view-shifts.component';
 import { AdminComponent } from './_Admin/admin/admin.component';
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:"feedback",component:FeedbackComponent},
   {path:"forget-pass",component:ForgetPassComponent},
   {path:"let's-go",component:LetsGoComponent},
+  {path:"view-shifts",component:ViewShiftsComponent},
 
   {path:"ad-medologin-min",component:AdminComponent},
   // {path:"",component:},

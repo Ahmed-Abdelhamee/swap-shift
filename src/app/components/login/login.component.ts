@@ -42,9 +42,9 @@ export class LoginComponent implements OnInit {
 
   login_data(){
     signInWithEmailAndPassword( this.auth,this.email ,this.pass).then((log)=>{
-      this.toastr.success("Login successfully ")
       localStorage.setItem("userID",log.user.uid)
       this.authServ.user=log.user;
+      this.toastr.success("Login successfully ")
       // setTimeout(()=>{
       //       window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
             

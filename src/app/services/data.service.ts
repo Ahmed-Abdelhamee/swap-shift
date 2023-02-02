@@ -55,7 +55,7 @@ export class DataService {
     return this.http.get<swap[]>(`${this.url}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}.json`)
   }
   set_Swap_dataArr(){
-    this.swap_arr=[]
+    this.swap_arr=[]//for remove the data saved before in this array and prevent it to be duplicated when we call set_Swap_dataArr() again ;
     this.getData().subscribe( data =>{
       for (const key in data) {
         if (Object.prototype.hasOwnProperty.call(data, key)) {

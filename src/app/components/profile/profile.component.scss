@@ -8,6 +8,9 @@
     background-color: rgb(43, 92, 92);
     margin-bottom: -150px;
     }
+    div .notifys{
+        font-size: 12px;
+    }
     div .card{
         height: 390px;
         border-radius: 10px;
@@ -49,4 +52,25 @@
 }
 .btn-outline-info{
     margin-right: 15px;
+}
+
+
+.notifys{
+    color: white;
+    animation-name: notify;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    text-shadow: 2px 2px 10px gray ;
+    // background-color: rgb(158, 116, 155);
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+}
+
+@keyframes notify {
+    0% {color: #480031;}
+    50% {color: white;}
+    100% {color: #480031;} ;
 }

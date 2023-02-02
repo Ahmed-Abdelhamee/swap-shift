@@ -13,7 +13,9 @@
         <p class="text-center col-12">
             <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal">change personal data</button>
         </p>
+        <small class=" col-12 notifys" *ngIf="!user_requests.length">لا تظهر الشيفتات او الاجازات المطلوبة في الشهر الماضي </small>
         <div class="col-sm-3 p-3" *ngFor="let item of user_requests ; let i=index">
+
             <div class="card p-3">
                 <P class="text" *ngIf="item.SwapType !='' "> <span class="text-info"> SwapType : </span> {{item.SwapType}}</P>
                 <P class="text" *ngIf="item.where !='' "> <span class="text-info"> where :  </span> {{item.where}}</P>
