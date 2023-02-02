@@ -21,6 +21,9 @@ export class ViewShiftsComponent implements OnInit {
   get_shifts:swap[]=[]
   get_users:users[]=[]
 
+  clicked_1:boolean=false;
+  clicked_2:boolean=false;
+
   wait:boolean=false;
 
   ngOnInit(): void {
@@ -77,14 +80,18 @@ export class ViewShiftsComponent implements OnInit {
         
       // console.log(this.get_shifts)
       // console.log(this.get_users)
-
       this.wait=false;
 
       this.swap_arr=[]
       this.users=[]
-      
     }
   }
 
+  clicked1(){
+    this.clicked_1=true
+  }
+  clicked2(){
+    this.clicked_2=true
+  }
 
 }

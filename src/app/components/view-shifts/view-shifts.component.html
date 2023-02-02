@@ -4,15 +4,15 @@
 <div class="col-12  d-flex justify-content-center pt-1 content">
     <div class="col-sm-4">
         <p class="title">view day shifts needed</p>
-        <select class="form-control mb-2 text-center" name="site" [(ngModel)]="where" id="site" (change)="view_get_shifts()">
+        <select class="form-control mb-2 text-center" name="site" [(ngModel)]="where" id="site" (change)="view_get_shifts();clicked1()">
             <option value="site">site</option>
             <option value="home">home</option>
         </select>
-        <input class="form-control" type="date" name="date" id="date" [(ngModel)]="day" (change)="view_get_shifts()">
+        <input class="form-control" type="date" name="date" id="date" [(ngModel)]="day" (change)="view_get_shifts();clicked2()">
     </div>
 </div>
 
-<div class="col-12 data">
+<div class="col-12 data" *ngIf="get_shifts.length!=0 && clicked_1 && clicked_2">
     <div class="col-sm-3 p-3" *ngFor="let item of get_shifts ; let i=index">
         <div class="card p-3">
             <p class="small-title">your friend request</p>
@@ -30,6 +30,12 @@
                     <img src="assets/whatsapp.png" alt="whats" class="whats">
                  </a></span></P>
         </div>
+    </div>
+</div>
+
+<div class="col-12 no-data d-flex justify-content-center pt-2" *ngIf="get_shifts.length==0 && clicked_1 && clicked_2">
+    <div class="col-sm-4">
+        <img src="assets/waiting.png" alt="wait" width="100%">
     </div>
 </div>
 
