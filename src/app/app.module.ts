@@ -34,6 +34,7 @@ import { ForgetPassComponent } from './components/forget-pass/forget-pass.compon
 import { AdminComponent } from './_Admin/admin/admin.component';
 import { LetsGoComponent } from './components/lets-go/lets-go.component';
 import { ViewShiftsComponent } from './components/view-shifts/view-shifts.component';
+import { ViewHolidaysComponent } from './components/view-holidays/view-holidays.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { ViewShiftsComponent } from './components/view-shifts/view-shifts.compon
     ForgetPassComponent,
     AdminComponent,
     LetsGoComponent,
-    ViewShiftsComponent
+    ViewShiftsComponent,
+    ViewHolidaysComponent
   ],
   imports: [
     BrowserModule,

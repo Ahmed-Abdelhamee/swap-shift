@@ -34,7 +34,7 @@ export class AdminComponent implements OnInit {
       setTimeout(() => {
         this.counter++
         this.nums_fun(number)
-      }, 50);
+      }, 10);
     }else{
       clearInterval
     }

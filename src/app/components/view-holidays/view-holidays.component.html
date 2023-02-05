@@ -1,19 +1,20 @@
-
 <app-header></app-header>
+
+
 
 <div class="col-12  d-flex justify-content-center pt-1 content">
     <div class="col-sm-4">
-        <p class="title">view day shifts </p>
-        <select class="form-control mb-2 text-center" name="site" [(ngModel)]="where" id="site" (change)="view_get_shifts();clicked1()">
+        <p class="title">View Agent : Have-Day off</p>
+        <select class="form-control mb-2 text-center" name="where" [(ngModel)]="where" id="where" (change)="view_get_holidays();clicked1()">
             <option value="site">site</option>
             <option value="home">home</option>
         </select>
-        <input class="form-control" type="date" name="date" id="date" [(ngModel)]="day" (change)="view_get_shifts();clicked2()">
+        <input class="form-control" type="date" name="date" id="date" [(ngModel)]="day" (change)="view_get_holidays();clicked2()">
     </div>
 </div>
 
-<div class="col-12 data" *ngIf="get_shifts.length!=0 && clicked_1 && clicked_2">
-    <div class="col-sm-3 p-3" *ngFor="let item of get_shifts ; let i=index">
+<div class="col-12 data" *ngIf="get_holidays.length!=0 && clicked_1 && clicked_2">
+    <div class="col-sm-3 p-3" *ngFor="let item of get_holidays ; let i=index">
         <div class="card p-3" *ngIf="get_users[i] != undefined">
             <p class="small-title">your friend request</p>
             <P class="text" *ngIf="item.SwapType !='' "> <span class="text-info"> SwapType : </span> {{item.SwapType}}</P>
@@ -33,10 +34,5 @@
     </div>
 </div>
 
-<div class="col-12 no-data d-flex justify-content-center pt-2" *ngIf="get_shifts.length==0 && clicked_1 && clicked_2">
-    <div class="col-sm-4">
-        <img src="assets/waiting.png" alt="wait" width="100%">
-    </div>
-</div>
 
 <app-zfooter></app-zfooter>

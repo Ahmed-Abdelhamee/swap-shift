@@ -7,17 +7,17 @@
     <div class="col-12"  *ngIf=" swap.length != 0 ">
         
         <div class="col-sm-3 p-3" *ngFor="let item of swap ; let i=index">
-            <div class="card p-3">
+            <div class="card p-3" *ngIf="users[i] != undefined">
                 <p class="small-title">your friend request</p>
-                <P class="text" *ngIf="item.SwapType !='' "> <span class="text-info"> SwapType : </span> {{item.SwapType}}</P>
-                <P class="text" *ngIf="item.where !='' "> <span class="text-info"> where :  </span> {{item.where}}</P>
-                <P class="text" *ngIf="item.have_day !='' "> <span class="text-info"> have day : </span> {{item.have_day}}</P>
-                <P class="text" *ngIf="item.need_day !='' "> <span class="text-info"> need day :  </span> {{item.need_day}}</P>
-                <P class="text" *ngIf="item.have_shift !='' "><span class="text-info"> have shift :  </span> {{item.have_shift}}</P>
-                <P class="text" *ngIf="item.have_shift_type !=''  && item.have_shift_type != undefined "><span class="text-info"> have shift type:  </span> {{item.have_shift_type}}</P>
-                <P class="text" *ngIf="item.need_shift !='' "> <span class="text-info"> need shift  </span> {{item.need_shift}}</P>
-                <P class="text" *ngIf="item.shift_type !='' "> <span class="text-info"> need shift type : </span> {{item.shift_type}}</P>
-                <P class="text" *ngIf="users[i].phone !='' ">
+                <P class="text" *ngIf="item.SwapType !='' && users[i].phone !='' "> <span class="text-info"> SwapType : </span> {{item.SwapType}}</P>
+                <P class="text" *ngIf="item.where !='' && users[i].phone !=''  "> <span class="text-info"> where :  </span> {{item.where}}</P>
+                <P class="text" *ngIf="item.have_day !='' && users[i].phone !=''  "> <span class="text-info"> have day : </span> {{item.have_day}}</P>
+                <P class="text" *ngIf="item.need_day !='' && users[i].phone !=''  "> <span class="text-info"> need day :  </span> {{item.need_day}}</P>
+                <P class="text" *ngIf="item.have_shift !='' && users[i].phone !=''  "><span class="text-info"> have shift :  </span> {{item.have_shift}}</P>
+                <P class="text" *ngIf="item.have_shift_type !='' && users[i].phone !=''   && item.have_shift_type != undefined "><span class="text-info"> have shift type:  </span> {{item.have_shift_type}}</P>
+                <P class="text" *ngIf="item.need_shift !='' && users[i].phone !=''  "> <span class="text-info"> need shift  </span> {{item.need_shift}}</P>
+                <P class="text" *ngIf="item.shift_type !='' && users[i].phone !=''  "> <span class="text-info"> need shift type : </span> {{item.shift_type}}</P>
+                <P class="text" *ngIf="users[i].phone !='' && users[i].phone !=''  ">
                      <span class="text-info"> phone : </span>
                      <span> <a href="https://api.whatsapp.com/send?phone=+2{{users[i].phone}}" class="whatsLink" target="_blank"> {{ users[i].name}}
                         <img src="assets/whatsapp.png" alt="whats" class="whats">
