@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'swap-shifts';
+
+  // for deploy the site in github 
+  // ng build --output-path docs --base-href /swap-shift/
 }
