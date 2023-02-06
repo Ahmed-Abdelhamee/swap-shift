@@ -39,7 +39,7 @@ span{
     padding-top: 0px;
 }
 .card{
-    box-shadow: inset -2px -2px 5px rgb(144, 183, 254) , 2px 2px 5px rgb(144, 183, 254) ,;
+    box-shadow: inset -2px -2px 5px rgb(144, 183, 254) , 2px 2px 5px rgb(144, 183, 254) ; 
 }
 .small-title{
     color: #8b005f;
@@ -62,6 +62,9 @@ span{
 }
 .whatsLink{
     margin-left: 15px;
+}
+.whatsHeight{
+    height: 55px;
 }
 .notify{
     font-size: 20px;

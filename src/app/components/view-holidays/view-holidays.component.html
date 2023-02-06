@@ -25,8 +25,10 @@
             <P class="text" *ngIf="item.have_shift_type !=''  && item.have_shift_type != undefined "><span class="text-info"> have shift type:  </span> {{item.have_shift_type}}</P>
             <P class="text" *ngIf="item.need_shift !='' "> <span class="text-info"> need shift  </span> {{item.need_shift}}</P>
             <P class="text" *ngIf="item.shift_type !='' "> <span class="text-info"> need shift type : </span> {{item.shift_type}}</P>
-            <P class="text" *ngIf="get_users[i].phone !='' ">
-                 <span class="text-info"> phone : </span>
+            <P class="text" *ngIf="get_users[i].phone !='' && get_users[i].phone !='' "><span class="text-info"> phone : </span> {{get_users[i].phone}}</P>
+
+            <P class="text whatsHeight" *ngIf="get_users[i].phone !='' ">
+                 <span class="text-info"> chat what's  : </span>
                  <span> <a href="https://api.whatsapp.com/send?phone=+2{{get_users[i].phone}}" class="whatsLink" target="_blank"> {{ get_users[i].name}}
                     <img src="assets/whatsapp.png" alt="whats" class="whats">
                  </a></span></P>

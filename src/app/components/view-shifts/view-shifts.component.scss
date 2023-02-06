@@ -7,6 +7,10 @@
     div div .title{
         font-size: 14px;
     }
+
+    div div .card{
+        height: auto;
+    }
 }
 
 .data{
@@ -32,6 +36,6 @@
     color: #660b51;
     text-transform: capitalize;
 }
-.card{
-    height: 380px;
+.whatsHeight{
+    height: 40px;
 }

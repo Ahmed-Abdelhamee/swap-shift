@@ -104,9 +104,9 @@ export class HomeComponent implements OnInit {
         let swap_result = this.dataServ.filters(this.swap.value , this.swap_arr);
         let swappers=this.dataServ.get_theSwaper_arr(swap_result)
         this.dataServ.shareSwap(swap_result,swappers);
-        console.log(this.swap.value)
-        console.log(swap_result)
-        console.log(swappers)
+        // console.log(this.swap.value)
+        // console.log(swap_result)
+        // console.log(swappers)
         this.route.navigate(['/show-swap']);
       }else{
         this.toastr.error('',"please enter valid data");
