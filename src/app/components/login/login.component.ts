@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
 
   login_data(){
     signInWithEmailAndPassword( this.auth,this.email ,this.pass).then((log)=>{
-      localStorage.setItem("userID",log.user.uid)
+      localStorage.setItem("swapUserID",log.user.uid)
       this.authServ.user=log.user;
       this.toastr.success("Login successfully ")
       // setTimeout(()=>{
@@ -54,7 +54,8 @@ export class LoginComponent implements OnInit {
       setTimeout(()=>{this.route.navigate(["/let's-go"])}, 2000);
       // setTimeout(()=>{window.location.reload()}, 2000);
     }).catch(err =>{
-      this.toastr.error("Login Error ")
+      this.toastr.error("Login Error ");
+      this.route.navigate(['/register'])
     })
   }
 

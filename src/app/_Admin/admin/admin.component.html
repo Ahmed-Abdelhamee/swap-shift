@@ -12,16 +12,23 @@
                 <th scope="col">user id</th>
                 <th scope="col">email</th>
                 <th scope="col">show</th>
+                <th scope="col">delete</th>
               </tr>
             </thead>
             <tbody>
               <tr  *ngFor="let item of users; let i=index">
                 <td>{{i+1}}</td>
                 <td>{{item.userID}}</td>
+                <td>{{users_arr_keys[i]}}</td>
                 <td class="text-info">{{item.email}}</td>
                 <td> <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#staticBackdrop" (click)="show_user(item)">
                     show
-                  </button></td>
+                  </button>
+                </td>
+                <td> <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#staticBackdrop" (click)="delete_user(users_arr_keys[i])">
+                    delete
+                  </button>
+                </td>
               </tr>
             </tbody>
         </table>
@@ -55,3 +62,26 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><b>user_ID</b> : {{user_ID}}</p>
+          <p><b>user_name</b> : {{user_name}}</p>
+          <p><b>user_email</b> : {{user_email}}</p>
+          <p><b>user_phone</b> : {{user_phone}}</p>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->

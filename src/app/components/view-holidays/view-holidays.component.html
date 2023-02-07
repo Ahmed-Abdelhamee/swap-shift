@@ -37,4 +37,9 @@
 </div>
 
 
+<div class="col-12 no-data d-flex justify-content-center pt-2" *ngIf="get_holidays.length==0 && clicked_1 && clicked_2">
+    <div class="col-sm-4">
+        <img src="assets/waiting.png" alt="wait" width="100%">
+    </div>
+</div>
 <app-zfooter></app-zfooter>

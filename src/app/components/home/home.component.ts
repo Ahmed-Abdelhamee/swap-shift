@@ -32,13 +32,13 @@ export class HomeComponent implements OnInit {
 
   constructor( private formbuilder:FormBuilder , private http:HttpClient , private dataServ:DataService , private toastr:ToastrService , private route:Router ,private routeServ:RoutersService) {
                 this.swap.patchValue({
-                  userId:localStorage.getItem('userID')
+                  userId:localStorage.getItem('swapUserID')
                 })  
                 
                 this.swap_arr = dataServ.set_Swap_dataArr(); // we call it here because we build it in service
                 this.users = dataServ.add_Users_in_arr(); // we call it here because we build it in service 
                 //and when we need to use the source to fill arrays we copy the source here in  constructor()
-                this.isUser=(localStorage.getItem('userID')) ? true : false
+                this.isUser=(localStorage.getItem('swapUserID')) ? true : false
           }
 
 
@@ -95,7 +95,7 @@ export class HomeComponent implements OnInit {
   // function for save user request 
   saveSwap(){
 
-    if(!localStorage.getItem('userID')){
+    if(!localStorage.getItem('swapUserID')){
         this.toastr.error('',"please login fristly");
         setTimeout(()=>{this.route.navigate(['/login'])}, 2000)
     }else{

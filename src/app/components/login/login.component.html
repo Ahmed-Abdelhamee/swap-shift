@@ -3,9 +3,14 @@
 <div class="col-12 d-flex justify-content-center pt-5 content">
     <div class="card col-sm-4 p-4 login">
         <h3 class="title">Sign In</h3>
+        <small class="text-center error" >
+          في حالة واجهت مشكلة في تسجيل الدخول يمكنك انشاء الحساب مرة اخري او التواصل معنا 
+        </small>
+
         <p>
           <a routerLink="/register" class="registerLink">* let's create account *</a>
         </p>
+        
         <form [formGroup]="login" (ngSubmit)="login_data()">
           <div class="form-group">
             <input type="email" class="form-control"  placeholder=" Email" name="email" formControlName="email" required>

@@ -6,6 +6,10 @@ import { Observable } from 'rxjs';
 import { swap } from '../interfaces/swap.interface';
 import { users } from '../interfaces/users.interface';
 
+// import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,7 +31,7 @@ export class DataService {
   
   final_Users:users[]=[]
 
-  constructor(private http:HttpClient , private database:Database) { }
+  constructor(private http:HttpClient , private database:Database,private route:Router,private toastr:ToastrService ) { }
 
   
   
@@ -44,8 +48,13 @@ export class DataService {
       item.where == data.where
     ))
     if(!find_swap_before){
-      this.http.post(`${this.url}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}.json`,data).subscribe(id=>{console.log(id)});
-      console.log('swap not exist before')
+      this.http.post(`${this.url}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}.json`,data).subscribe(
+        // id=>{console.log(id)}
+        );
+        this.http.post(`${this.url}/swapCopy_${this.Date.getMonth()+1}_${this.Date.getFullYear()}.json`,data).subscribe(
+          // id=>{console.log(id)}
+          );
+      // console.log('swap not exist before')
     }
     this.swap_arr=[]//for remove the data saved before in this array and prevent it to be duplicated when we call set_Swap_data_arr() again ;
   }
@@ -100,7 +109,7 @@ export class DataService {
         }
       }
     })
-    let items:swap[]=this.swap_arr.filter(item => item.userId == localStorage.getItem('userID'))
+    let items:swap[]=this.swap_arr.filter(item => item.userId == localStorage.getItem('swapUserID'))
     return items
   }
 
@@ -131,8 +140,55 @@ export class DataService {
   }
 
   delete_Request(key:any){
+
+    // const swalWithBootstrapButtons = Swal.mixin({
+    //   customClass: {
+    //     confirmButton: 'btn btn-success ml-4',
+    //     cancelButton: 'btn btn-danger'
+    //   },
+    //   buttonsStyling: false
+    // })
+    
+    // swalWithBootstrapButtons.fire({
+    //   title: 'Are you sure?',
+    //   text: "You won't be able to revert this!",
+    //   icon: 'warning',
+    //   showCancelButton: true,
+    //   confirmButtonText: 'Yes, delete it!',
+    //   cancelButtonText: 'No, cancel!',
+    //   reverseButtons: true
+    // }).then((result) => {
+    //   if (result.isConfirmed) {
+    //     this.http.delete(`${this.database.app.options.databaseURL}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}/${key}.json`).subscribe(()=> {} )
+    //     this.route.navigate(['/'])
+    //     swalWithBootstrapButtons.fire(
+    //       'Deleted!',
+    //       'Your file has been deleted.',
+    //       'success'
+    //     )
+    //   } else if (
+    //     /* Read more about handling dismissals below */
+    //     result.dismiss === Swal.DismissReason.cancel
+    //   ) {
+    //     swalWithBootstrapButtons.fire(
+    //       'Cancelled',
+    //       'Your imaginary file is safe :)',
+    //       'error'
+    //     )
+    //   }
+    // })
+
     this.http.delete(`${this.database.app.options.databaseURL}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}/${key}.json`).subscribe(()=> {} )
   }
+
+  delete_user(key:string){
+    this.http.delete(`${this.database.app.options.databaseURL}/users/${key}.json`).subscribe(()=> {} )
+    setTimeout(()=>{
+      window.location.reload()
+    },2000)
+    this.toastr.success("deleted item successfully! ")
+  }
+
 }
 
 

@@ -21,18 +21,9 @@
                 
                 <P class="text whatsHeight" *ngIf="users[i].phone !='' && users[i].phone !='' ">
                      <span class="text-info"> chat what's : </span>
-                     <span> <a href="https://api.whatsapp.com/send?phone=+2{{users[i].phone}}?text={{item.SwapType}}%اريد%تبديل%معك%سواب%swap%your%shift%بناءا%علي%طلبك في" class="whatsLink" target="_blank"> {{ users[i].name}}
+                     <span> <a href="https://wa.me/+2{{users[i].phone}}?text= swap your shift %0a %0a   بناء علي طلبك في موقع السواب اريد التبديل معك ليوم {{item.have_day}} " class="whatsLink" target="_blank"> {{ users[i].name}}
                         <img src="assets/whatsapp.png" alt="whats" class="whats">
-                     </a></span>
-                </P>
-
-                <!-- <P class="text whatsHeight" *ngIf="users[i].phone !='' && users[i].phone !='' ">
-                    <span class="text-info"> chat what's : </span>
-                    <span> <a href="https://api.whatsapp.com/send?phone=+2{{users[i].phone}}" class="whatsLink" target="_blank"> {{ users[i].name}}
-                       <img src="assets/whatsapp.png" alt="whats" class="whats">
-                    </a></span>
-               </P> -->
-                    
+                     </a></span></P>
             </div>
         </div>
     </div>

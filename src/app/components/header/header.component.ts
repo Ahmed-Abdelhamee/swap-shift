@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-    userId =  localStorage.getItem("userID");
+    userId =  localStorage.getItem("swapUserID");
 
   constructor( private auth:Auth , private toastr: ToastrService, private authServ:AuthService, private routeServ:RoutersService,private route:Router) { }
 
@@ -34,12 +34,12 @@ export class HeaderComponent implements OnInit {
 logOut(){
     this.auth.signOut().then(()=>{
       this.toastr.success("LogOut successfully ")
-      localStorage.removeItem("userID");
+      localStorage.removeItem("swapUserID");
       setTimeout(()=>{this.route.navigate(['/login'])}, 2000)
       // setTimeout(()=>{window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")}, 2000)
     }).catch(()=>{
       this.toastr.error("already LogOut")
-      localStorage.removeItem("userID")
+      localStorage.removeItem("swapUserID")
     })
   }
 

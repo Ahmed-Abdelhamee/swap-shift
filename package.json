@@ -1,6 +1,7 @@
 {
   "name": "swap-shifts",
-  "version": "0.0.0","predeploy": [
+  "version": "0.0.0",
+  "predeploy": [
     "npm --prefix \"%RESOURCE_DIR%\" run lint"
   ],
   "scripts": {

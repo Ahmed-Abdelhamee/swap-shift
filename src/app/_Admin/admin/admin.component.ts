@@ -10,6 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 export class AdminComponent implements OnInit {
 
   public users:users[]=[]
+  public users_arr_keys:string[]=[]
   counter=0;
 
   constructor(private dataSev:DataService) {
@@ -18,6 +19,7 @@ export class AdminComponent implements OnInit {
         if (Object.prototype.hasOwnProperty.call(data, key)) {
           const element = data[key];
           this.users.push(element)
+          this.users_arr_keys.push(key)
         }
       }
       
@@ -53,4 +55,10 @@ export class AdminComponent implements OnInit {
     this.user_phone=item.phone
   }
 
+  delete_user(user_key:string){
+    this.dataSev.delete_user(user_key)
+  }
+  set_Key_Delete(){
+  
+  }
 }
