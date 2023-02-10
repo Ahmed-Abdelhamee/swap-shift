@@ -51,15 +51,16 @@
 .content{
     padding-top: 60px;
     margin-bottom: -150px;
-    background-size: 100%;
-    background-image: url(https://images.unsplash.com/photo-1560264280-88b68371db39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FsbCUyMGNlbnRlcnxlbnwwfHwwfHw%3D&w=1000&q=80);
+    background-size: cover;
+    background-image: url(/assets/bg2.png);
+    // background-image: url(https://images.unsplash.com/photo-1560264280-88b68371db39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FsbCUyMGNlbnRlcnxlbnwwfHwwfHw%3D&w=1000&q=80);
 
     background-repeat: no-repeat;
     // animation-name: swap_bg;
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
-    padding-bottom: 200px;
+    padding-bottom: 350px;
 }
 // @keyframes swap_bg{
 //     0% {background-image: url(/assets/callcenter2.png);}

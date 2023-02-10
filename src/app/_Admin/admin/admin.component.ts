@@ -13,6 +13,8 @@ export class AdminComponent implements OnInit {
   public users_arr_keys:string[]=[]
   counter=0;
 
+  user_key:string=''
+
   constructor(private dataSev:DataService) {
     dataSev.getUsers().subscribe(data =>{
       for (const key in data) {
@@ -55,10 +57,18 @@ export class AdminComponent implements OnInit {
     this.user_phone=item.phone
   }
 
-  delete_user(user_key:string){
-    this.dataSev.delete_user(user_key)
+  set_Key_Delete(user_key:string,item:users){
+    this.user_ID=item.userID!
+    this.user_name=item.name
+    this.user_email=item.email
+    this.user_phone=item.phone;
+
+    this.user_key=user_key
+    this.delete_user(user_key);
+
   }
-  set_Key_Delete(){
-  
+  delete_user(user_key:string){
+    // this.dataSev.delete_user(user_key)
+    // console.log(user_key)
   }
 }
