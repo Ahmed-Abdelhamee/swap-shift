@@ -60,7 +60,9 @@
 
 .content{
     padding-top: 30px;
-    background-image: url(/assets/headphone.png);
+    //url bg-img from firebase storage   i but the image and copy path after open it
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/swap-shift.appspot.com/o/IMG-20230223-WA0002.jpg?alt=media&token=0064ead8-939c-4b9c-b286-4dc0c26cce8b);
+    // background-image: url(/assets/headphone.png);
     background-size: 100%;
     background-repeat: no-repeat;
     // animation-name: swap_bg;

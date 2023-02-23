@@ -9,6 +9,8 @@ import { users } from 'src/app/interfaces/users.interface';
 import { DataService } from 'src/app/services/data.service';
 import { RoutersService } from 'src/app/services/routers.service';
 
+import * as Aos from 'aos';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -55,7 +57,9 @@ export class HomeComponent implements OnInit {
   })
 
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    Aos.init();
+  }
 
 
   // function for control the conflict between   shift in site  &  shift in home 
