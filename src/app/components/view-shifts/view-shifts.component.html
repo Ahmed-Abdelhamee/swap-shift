@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<div class="col-12 data" *ngIf="get_shifts.length!=0 && clicked_1 && clicked_2">
+<div class="col-12" *ngIf="get_shifts.length!=0 && clicked_1 && clicked_2">
     <div class="col-sm-3 p-3" *ngFor="let item of get_shifts ; let i=index">
         <div class="card p-3" *ngIf="get_users[i] != undefined">
             <p class="small-title">your friend request</p>
@@ -41,4 +41,5 @@
     </div>
 </div>
 
+<div class="col-12" style="padding-top: 400px;"></div>
 <app-zfooter></app-zfooter>

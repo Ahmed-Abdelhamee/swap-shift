@@ -63,20 +63,16 @@
     //url bg-img from firebase storage   i but the image and copy path after open it
     background-image: url(https://firebasestorage.googleapis.com/v0/b/swap-shift.appspot.com/o/IMG-20230223-WA0002.jpg?alt=media&token=0064ead8-939c-4b9c-b286-4dc0c26cce8b);
     // background-image: url(/assets/headphone.png);
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
-    // animation-name: swap_bg;
+    height: 100%;
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
-    margin-bottom: -150px;
+    // margin-bottom: -150px;
     padding-bottom: 250px;
 }
-// @keyframes swap_bg{
-//     0% {background-image: url(/assets/callcenter2.png);}
-//     50% {background-image: url(/assets/callcentrer.png);}
-//     100% {background-image: url(/assets/callcenter2.png);}
-// }
+
 .card{
     box-shadow: inset -3px -3px 10px rgb(94, 85, 93) ,inset 2px 2px 10px rgb(234, 220, 234);
     border-radius: 10px;
@@ -89,6 +85,8 @@
     text-transform: capitalize;
     text-align: center;
     padding-top: 20px;
+    animation-name: fadeUp;
+    animation-duration: 3.5s;
 }
 .SwapShiftText{
     font-size: 65px;
@@ -97,6 +95,16 @@
     text-transform: capitalize;
     text-align: center;
     text-shadow: 5px 5px 12px white;
+    animation-name: fadeUp2;
+    animation-duration: 3.5s;
+}
+@keyframes fadeUp{
+    from {opacity: 0; margin-top: -50px;}
+    to {opacity: 1; margin-top: 0px;}
+}
+@keyframes fadeUp2{
+    from {opacity: 0; margin-top: 50px;}
+    to {opacity: 1; margin-top: 0px;}
 }
 .techReview{
     font-size: 25px;

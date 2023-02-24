@@ -4,24 +4,55 @@
 }
 
 @media only screen and (max-width: 600px) {
+    div.footer{
+        padding-bottom: 100px;
+    }
+    div div .textStyle{
+        font-size: 12px;
+    }
     div div a{
         font-size: 13px;
-        margin-left: 10px;
+        margin: 0px 5px;
+        margin-bottom: 100px;
+    }
+    div .ending-text{
+        font-size: medium;
+        word-spacing: 3px;
+        display: block;
     }
 }
 
 .footer{
-    height: 100px;
-    background-color: black;
     background-color: #3f0026;
     width: 100%;
-    margin-top: 150px;
-    margin-bottom: 150px;
     font-size: 20px;
-    padding-top: 20px;
+    padding-bottom: 35px;
+}
+.textStyle{
+    padding-top: 10px ;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
 }
 
 .footer a{
     color: white;
-    margin-left: 30px;
+    margin: 0px 25px;
+    text-shadow: 5px 5px 12px pink;
+    text-transform: capitalize;
+}
+.footer a:hover{
+    color: yellow;
+}
+.ending-text{
+    display: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    text-transform: capitalize;
+    word-spacing: 5px;
+    font-family:  'Lobster', cursive;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
 }

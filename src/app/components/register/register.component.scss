@@ -6,6 +6,7 @@
 .content{
     animation-name: show;
     animation-duration: 1s;
+    padding-bottom: 150px;
 }
 @keyframes show{
     from {opacity: 0;}
