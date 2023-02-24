@@ -27,7 +27,8 @@
         font-weight: 600;
         word-spacing: 3px;
         display: block;
-        background-image: url(/assets/callcentrer.jpg);
+        //url bg-img from firebase storage   i but the image and copy path after open it
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/swap-shift.appspot.com/o/callcentrer.jpg?alt=media&token=5fec340e-65b7-4cc6-af75-0152379e02b1);
         background-size: cover;
         background-repeat: no-repeat;
         height: 250px;
