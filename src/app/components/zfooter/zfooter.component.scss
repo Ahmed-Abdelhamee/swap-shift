@@ -4,13 +4,19 @@
 }
 
 @media only screen and (max-width: 600px) {
+    div.footer{
+        padding-bottom: 0%;
+    }
     div div .textStyle{
-        font-size: 12px;
+        font-size: 13px;
+        margin: 0px 0px;
+        margin-top: 15px;
+        margin-bottom: 20px;
     }
     div div a{
         font-size: 13px;
-        margin: 0px 5px;
-        margin-bottom: 30px;
+        margin: 10px 5px;
+        margin-bottom: 40px;
     }
     div .col-12.ending-text{
         display: none;
@@ -23,16 +29,16 @@
         cursor: pointer;
         z-index: 2;
         text-align: center;
-        font-size: 12px;
+        font-size: 13.5px;
         font-weight: 600;
         word-spacing: 3px;
         display: block;
         //url bg-img from firebase storage   i but the image and copy path after open it
         background-image: url(https://firebasestorage.googleapis.com/v0/b/swap-shift.appspot.com/o/callcentrer.jpg?alt=media&token=5fec340e-65b7-4cc6-af75-0152379e02b1);
-        background-size: cover;
+        background-size: 100%;
         background-repeat: no-repeat;
-        height: 250px;
-        padding-top: 90px;
+        height: 300px;
+        padding-top: 20%;
         border-radius: 10px;
     }
 }
@@ -42,7 +48,7 @@
     width: 100%;
     font-size: 20px;
     padding: 0px;
-    padding-bottom: 35px;
+    padding-bottom: 25px;
 }
 .textStyle{
     padding-top: 10px ;
@@ -61,6 +67,5 @@
     color: yellow;
 }
 .ending-text{
-    
-    
+    display: none;
 }
