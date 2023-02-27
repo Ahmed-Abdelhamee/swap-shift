@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErrorComponent } from './components/error/error.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ForgetPassComponent } from './components/forget-pass/forget-pass.component';
 import { HomeComponent } from './components/home/home.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
 
   {path:"ad-swapshift-users-min",component:AdminComponent},
   {path:"ad-swapshift-feedback-min",component:AdminFeedbackComponent},
+  {path:"**",component:ErrorComponent},
   // {path:"",component:},
 ];
 

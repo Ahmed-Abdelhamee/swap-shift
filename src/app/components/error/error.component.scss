@@ -1,0 +1,48 @@
+[class*="col-"]{
+    float: left;
+}
+
+@media only screen and (max-width: 700px) {
+    div.container img{
+        width: 150px;
+        height: 150px;
+    }
+    div.container .textStyle{
+        font-size: 20px;
+    }
+    div.container .linkStyle{
+        font-size: 12px;
+        text-transform: lowercase
+    }
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.imgStyle{
+    width: 200px;
+    height: 200px;
+}
+.textStyle{
+    font-family: 'Bebas Neue', cursive;
+    padding-left: 30px;
+    animation-name: view;
+    animation-duration: .8s;
+    animation-iteration-count: infinite;
+    animation-direction :alternate;
+}
+.linkStyle{
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 0px;
+    text-transform: capitalize;
+}
+@keyframes view {
+    from {color: black;}
+    to { color: red;}
+}
