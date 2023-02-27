@@ -11,6 +11,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ShowSwapComponent } from './components/show-swap/show-swap.component';
 import { ViewHolidaysComponent } from './components/view-holidays/view-holidays.component';
 import { ViewShiftsComponent } from './components/view-shifts/view-shifts.component';
+import { AdminFeedbackComponent } from './_Admin/admin-feedback/admin-feedback.component';
 import { AdminComponent } from './_Admin/admin/admin.component';
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path:"view-shifts",component:ViewShiftsComponent},
   {path:"view-holidays",component:ViewHolidaysComponent},
 
-  {path:"ad-medologin-min",component:AdminComponent},
+  {path:"ad-swapshift-users-min",component:AdminComponent},
+  {path:"ad-swapshift-feedback-min",component:AdminFeedbackComponent},
   // {path:"",component:},
 ];
 

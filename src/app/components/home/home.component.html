@@ -14,6 +14,9 @@
     
     </div>
     <div class="col-sm-6">
+        <div class="col-12">
+            <p class="numbers">number of Accounts : {{numberOfPeople}}</p>
+        </div>
         <div class="card p-4 form_collection">
             <form [formGroup]="swap" (ngSubmit)="saveSwap()" novalidate>
                 <p class="lets_swap" *ngIf="isUser"> let's swap</p>

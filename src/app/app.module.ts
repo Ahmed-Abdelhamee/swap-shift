@@ -35,6 +35,7 @@ import { AdminComponent } from './_Admin/admin/admin.component';
 import { LetsGoComponent } from './components/lets-go/lets-go.component';
 import { ViewShiftsComponent } from './components/view-shifts/view-shifts.component';
 import { ViewHolidaysComponent } from './components/view-holidays/view-holidays.component';
+import { AdminFeedbackComponent } from './_Admin/admin-feedback/admin-feedback.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ViewHolidaysComponent } from './components/view-holidays/view-holidays.
     AdminComponent,
     LetsGoComponent,
     ViewShiftsComponent,
-    ViewHolidaysComponent
+    ViewHolidaysComponent,
+    AdminFeedbackComponent
   ],
   imports: [
     BrowserModule,

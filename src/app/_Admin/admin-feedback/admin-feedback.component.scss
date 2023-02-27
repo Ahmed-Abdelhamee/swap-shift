@@ -1,0 +1,31 @@
+[class*="col-"]{
+    float: left;
+    width: 100%;
+}
+
+.content{
+    padding-bottom: 200px;
+}
+.title{
+    text-align: center;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    color: #9b006a;
+    text-transform: capitalize;
+}
+.data{
+    padding: 10px;
+}
+.card{
+    padding: 15px;
+    text-align: center;
+    overflow-y: scroll;
+    height: 250px;
+}
+.id{
+    padding-bottom: 10px;
+}
+.deleteDiv{
+    padding-top: 50px;
+}

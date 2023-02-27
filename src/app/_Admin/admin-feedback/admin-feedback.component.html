@@ -1,0 +1,30 @@
+
+<app-header></app-header>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin feedback</title>
+</head>
+<body>
+    <div class="col-12 content">
+        <p class="col-12 title">clients-feedback</p>
+        <div class="col-sm-3 data" *ngFor="let item of feedback_arr, let i=index">
+            <div class="card">
+                <small class="text-info id"> userID : {{item.userID}}</small>
+                <p >{{item.message}}</p>
+
+                <div class="text-center deleteDiv">
+                    <button class="btn btn-outline-danger" (click)="deleteItem(feedback_keys[i])">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<app-zfooter></app-zfooter>

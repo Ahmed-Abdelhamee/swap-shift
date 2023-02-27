@@ -26,6 +26,10 @@ export class HomeComponent implements OnInit {
   site:boolean=false;
 
 
+  numberOfPeople:number=0;
+  public Accounts:users[]=[]
+  public users_arr_keys:string[]=[]
+  
   // arrays 
   swap_arr:swap[]=[];
   users:users[]=[];
@@ -58,9 +62,32 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void { 
+    this.dataServ.getUsers().subscribe(data =>{
+      for (const key in data) {
+        if (Object.prototype.hasOwnProperty.call(data, key)) {
+          const element = data[key];
+          this.Accounts.push(element)
+          this.users_arr_keys.push(key)
+        }
+      }
+      
+      this.nums_fun(this.users.length);
+    })
+
     Aos.init();
   }
 
+  nums_fun(number:number){
+    if(this.numberOfPeople<number){
+      setTimeout(() => {
+        this.numberOfPeople++
+        this.nums_fun(number)
+      }, 10);
+    }else{
+      clearInterval
+    }
+  }
+  
 
   // function for control the conflict between   shift in site  &  shift in home 
   set_where(event:any){
@@ -118,7 +145,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
-
+  getAccounts(){
+    
+  }
   routes(link:string){
     this.routeServ.go_to(link)
   }

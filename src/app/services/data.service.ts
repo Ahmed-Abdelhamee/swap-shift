@@ -9,6 +9,7 @@ import { users } from '../interfaces/users.interface';
 // import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { feedback } from '../interfaces/feedback.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -140,6 +141,39 @@ export class DataService {
   }
 
   delete_Request(key:any){
+    this.http.delete(`${this.database.app.options.databaseURL}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}/${key}.json`).subscribe(()=> {} )
+  }
+
+  delete_user(key:string){
+    this.http.delete(`${this.database.app.options.databaseURL}/users/${key}.json`).subscribe(()=> {} )
+    setTimeout(()=>{
+      window.location.reload()
+    },2000)
+    this.toastr.success("deleted item successfully! ")
+  }
+
+
+  // feedback codes
+  sendFeedback(data:feedback){
+    this.http.post(`${this.url}/FeedBack.json`,data).subscribe();
+  }
+  getFeedback():Observable<feedback[]>{
+    return this.http.get<feedback[]>(`${this.url}/FeedBack.json`);
+  }
+  deleteFeedback(key:string){
+    this.http.delete(`${this.url}/FeedBack/${key}.json`).subscribe(()=> {} )
+    setTimeout(()=>{
+      window.location.reload()
+    },2000)
+    this.toastr.success("deleted item successfully! ")
+  }
+
+}
+
+
+
+
+// delete_Request(key:any){
 
     // const swalWithBootstrapButtons = Swal.mixin({
     //   customClass: {
@@ -178,22 +212,7 @@ export class DataService {
     //   }
     // })
 
-    this.http.delete(`${this.database.app.options.databaseURL}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}/${key}.json`).subscribe(()=> {} )
-  }
-
-  delete_user(key:string){
-    this.http.delete(`${this.database.app.options.databaseURL}/users/${key}.json`).subscribe(()=> {} )
-    setTimeout(()=>{
-      window.location.reload()
-    },2000)
-    this.toastr.success("deleted item successfully! ")
-  }
-
-}
-
-
-
-
+// }
 
 
 // error permission 
