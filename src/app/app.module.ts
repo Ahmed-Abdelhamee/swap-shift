@@ -37,6 +37,7 @@ import { ViewShiftsComponent } from './components/view-shifts/view-shifts.compon
 import { ViewHolidaysComponent } from './components/view-holidays/view-holidays.component';
 import { AdminFeedbackComponent } from './_Admin/admin-feedback/admin-feedback.component';
 import { ErrorComponent } from './components/error/error.component';
+import { SetAdminComponent } from './_Admin/set-admin/set-admin.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { ErrorComponent } from './components/error/error.component';
     ViewShiftsComponent,
     ViewHolidaysComponent,
     AdminFeedbackComponent,
-    ErrorComponent
+    ErrorComponent,
+    SetAdminComponent
   ],
   imports: [
     BrowserModule,

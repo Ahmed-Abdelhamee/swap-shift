@@ -14,6 +14,7 @@ import { ViewHolidaysComponent } from './components/view-holidays/view-holidays.
 import { ViewShiftsComponent } from './components/view-shifts/view-shifts.component';
 import { AdminFeedbackComponent } from './_Admin/admin-feedback/admin-feedback.component';
 import { AdminComponent } from './_Admin/admin/admin.component';
+import { SetAdminComponent } from './_Admin/set-admin/set-admin.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -31,6 +32,11 @@ const routes: Routes = [
 
   {path:"ad-swapshift-users-min",component:AdminComponent},
   {path:"ad-swapshift-feedback-min",component:AdminFeedbackComponent},
+
+  {path:"ad-swapshift-setAdmin-min",component:SetAdminComponent},
+
+
+
   {path:"**",component:ErrorComponent},
   // {path:"",component:},
 ];

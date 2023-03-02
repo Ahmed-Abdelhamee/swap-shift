@@ -1,0 +1,100 @@
+
+<app-header></app-header>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+</head>
+<body>
+    <div class="col-12 d-flex justify-content-center mb-4">
+        <div class="col-sm-4 card text-center">
+            <p class="text-info AdminText">Add Admin</p>
+            <form [formGroup]="addAdmin">
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" id="email" formControlName="email">
+                </div>
+                <button class="btn btn-outline-warning" type="submit" (click)="admin()"> add admin</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="col-12  d-flex justify-content-center content">
+        <div class="col-sm-6">
+            <table class="table table-dark">
+                <thead>
+                  <tr class="text-center">
+                    <th scope="col">#</th>
+                    <th scope="col">email</th>
+                    <th scope="col">show</th>
+                  </tr>
+                </thead>
+                <tbody  *ngFor="let item of admins ; let i=index">
+                  <tr class="text-center">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{item.AdminEmail}}</td>
+                    <td><button class="btn btn-outline-light"  data-toggle="modal" data-target="#exampleModal" (click)="show(item.Admin_userId)"> show</button></td>
+                    <td><button class="btn btn-outline-danger"  data-toggle="modal" data-target="#exampleModal2" (click)="show(item.Admin_userId); deleteItem(admins_key_arr[i])"> delete</button></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<app-zfooter></app-zfooter>
+
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">this Admin is</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>name : {{name}}</p>
+          <p>emai; : {{email}}</p>
+          <p>phone : {{phone}}</p>
+          <p>userID : {{userId}}</p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">this Admin is</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>name : {{name}}</p>
+          <p>emai; : {{email}}</p>
+          <p>phone : {{phone}}</p>
+          <p>userID : {{userId}}</p>
+        </div>
+       <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-outline-danger" (click)="do_deleteItem()"> Delete</button>
+       </div>
+      </div>
+    </div>
+  </div>

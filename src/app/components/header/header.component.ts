@@ -35,6 +35,7 @@ logOut(){
     this.auth.signOut().then(()=>{
       this.toastr.success("LogOut successfully ")
       localStorage.removeItem("swapUserID");
+      localStorage.removeItem("Swap_shift_Admin")
       setTimeout(()=>{this.route.navigate(['/login'])}, 2000)
       // setTimeout(()=>{window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")}, 2000)
     }).catch(()=>{

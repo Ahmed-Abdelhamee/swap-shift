@@ -1,0 +1,28 @@
+
+[class*="col-"]{
+    width: 100%;
+    float: left;
+}
+
+@media only screen and (max-width: 600px) {
+    div .card{
+        margin: 20px 0px;
+        padding: 10px 10px;
+    }
+    div div .btn{
+        font-size: 13px;
+    }
+}
+
+.content{
+    padding-bottom: 200px;
+}
+
+.card{
+    padding: 20px;
+    margin: 20px;
+}
+.AdminText{
+    font-size: 25px;
+    font-family: "Lobster", cursive;
+}

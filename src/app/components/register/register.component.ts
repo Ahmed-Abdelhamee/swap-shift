@@ -46,19 +46,18 @@ export class RegisterComponent implements OnInit {
   regist(){
     if(this.register.get('pass')?.value == this.register.get('ConfiremPass')?.value && this.register.valid){
       // console.log(this.register.value)
-      this.toastr.success('sign up successfully !','welcome')
+      // this.toastr.success('sign up successfully !','welcome')
       this.auth.register( this.email , this.pass , this.register.value);
       // setTimeout(()=>{
       //   window.open("https://ahmed-abdelhamee.github.io/swap-shift/","_self")
       // }, 2000);
 
-      setTimeout(()=>{this.route.navigate(["/let's-go"])}, 2000)
+      // setTimeout(()=>{this.route.navigate(["let's-go"])}, 2000)
       // setTimeout(()=>{window.location.reload()}, 2000);
       // console.log('register')
     }else{
       this.toastr.error('enter valid data ','error')
     }
   }
-
  
 }

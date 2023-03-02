@@ -64,11 +64,10 @@ export class AdminComponent implements OnInit {
     this.user_phone=item.phone;
 
     this.user_key=user_key
-    this.delete_user(user_key);
 
   }
   delete_user(user_key:string){
-    // this.dataSev.delete_user(user_key)
-    // console.log(user_key)
+    this.dataSev.delete_user(user_key)
+    console.log(user_key)
   }
 }

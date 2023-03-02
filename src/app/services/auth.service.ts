@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
+import { RoutersService } from './routers.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class AuthService {
 
   user: any;
   userId:any;
-  constructor(public auth:Auth , private http : HttpClient , private database:Database, private route:Router, private toastr:ToastrService) {
+  constructor(public auth:Auth , private http : HttpClient , private database:Database, private route:Router, private toastr:ToastrService, private routeServ:RoutersService) {
     this.userId=localStorage.getItem('swapUserID')
    }
 
@@ -24,24 +25,30 @@ export class AuthService {
       this.http.post(`${this.database.app.options.databaseURL}/users.json`,data).subscribe();
       this.http.post(`${this.database.app.options.databaseURL}/users_copy.json`,data).subscribe();
       localStorage.setItem("swapUserID",log.user.uid);
+      this.toastr.success('sign up successfully !','welcome')
       this.login( email, pass ) 
     }).catch(err =>{
       // console.log(err.message);
-      // this.toastr.error("sign up Error ")
+      this.toastr.error("compelete your data or contact us");
     })
   }
 
   login(email:string, pass:any){
     signInWithEmailAndPassword( this.auth,email ,pass).then((log)=>{
       localStorage.setItem("swapUserID",log.user.uid)
-      this.user=log.user
+      this.user=log.user;
+      setTimeout(()=>{this.routes("let's-go")}, 2000)
     }).catch(err =>{
       // console.log(err.message)
     })
   }
   
+  routes(link:string){
+    this.routeServ.go_to(link)
+  }
+
   forget_pass(email:string){
-    sendPasswordResetEmail(this.auth,email).then(()=>{ this.toastr.info("verify your email to change password") , this.route.navigate(['/home'])}).catch(()=>{ this.toastr.error("invalid email")})
+    sendPasswordResetEmail(this.auth,email).then(()=>{ this.toastr.info("verify your email to change password") , this.route.navigate(['/login'])}).catch(()=>{ this.toastr.error("invalid email")})
   }
 
   change_personal_data(user_key:string,userData:any , name : string , phone : string){

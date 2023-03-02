@@ -49,10 +49,10 @@ export class DataService {
       item.where == data.where
     ))
     if(!find_swap_before){
-      this.http.post(`${this.url}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}.json`,data).subscribe(
+      this.http.post(`${this.url}/swap_2_2023.json`,data).subscribe(
         // id=>{console.log(id)}
         );
-        this.http.post(`${this.url}/swapCopy_${this.Date.getMonth()+1}_${this.Date.getFullYear()}.json`,data).subscribe(
+        this.http.post(`${this.url}/swapCopy_2_2023.json`,data).subscribe(
           // id=>{console.log(id)}
           );
       // console.log('swap not exist before')
@@ -62,7 +62,7 @@ export class DataService {
 
   //  ------------------------  get array of swap request ---------------------------
   getData():Observable<swap[]>{
-    return this.http.get<swap[]>(`${this.url}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}.json`)
+    return this.http.get<swap[]>(`${this.url}/swap_2_2023.json`)
   }
   set_Swap_dataArr(){
     this.swap_arr=[]//for remove the data saved before in this array and prevent it to be duplicated when we call set_Swap_dataArr() again ;
@@ -141,7 +141,7 @@ export class DataService {
   }
 
   delete_Request(key:any){
-    this.http.delete(`${this.database.app.options.databaseURL}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}/${key}.json`).subscribe(()=> {} )
+    this.http.delete(`${this.database.app.options.databaseURL}/swap_2_2023/${key}.json`).subscribe(()=> {} )
   }
 
   delete_user(key:string){
@@ -193,7 +193,7 @@ export class DataService {
     //   reverseButtons: true
     // }).then((result) => {
     //   if (result.isConfirmed) {
-    //     this.http.delete(`${this.database.app.options.databaseURL}/swap_${this.Date.getMonth()+1}_${this.Date.getFullYear()}/${key}.json`).subscribe(()=> {} )
+    //     this.http.delete(`${this.database.app.options.databaseURL}/swap_2_2023/${key}.json`).subscribe(()=> {} )
     //     this.route.navigate(['/'])
     //     swalWithBootstrapButtons.fire(
     //       'Deleted!',
