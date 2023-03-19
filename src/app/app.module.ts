@@ -40,6 +40,10 @@ import { ErrorComponent } from './components/error/error.component';
 import { SetAdminComponent } from './_Admin/set-admin/set-admin.component';
 
 
+// Angular — The hash(#) trap for make it easey to reload any component after hosting the project
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,10 +83,12 @@ import { SetAdminComponent } from './_Admin/set-admin/set-admin.component';
 
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [
-    ScreenTrackingService,UserTrackingService
+    ScreenTrackingService,UserTrackingService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

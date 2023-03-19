@@ -16,7 +16,7 @@ export class AuthService {
   user: any;
   userId:any;
   constructor(public auth:Auth , private http : HttpClient , private database:Database, private route:Router, private toastr:ToastrService, private routeServ:RoutersService) {
-    this.userId=localStorage.getItem('swapUserID')
+    this.userId=localStorage.getItem('swapUserID*')
    }
 
   register(email:string, pass:any,data:any){
@@ -24,7 +24,7 @@ export class AuthService {
       data.userID=log.user.uid
       this.http.post(`${this.database.app.options.databaseURL}/users.json`,data).subscribe();
       this.http.post(`${this.database.app.options.databaseURL}/users_copy.json`,data).subscribe();
-      localStorage.setItem("swapUserID",log.user.uid);
+      localStorage.setItem("swapUserID*",log.user.uid);
       this.toastr.success('sign up successfully !','welcome')
       this.login( email, pass ) 
     }).catch(err =>{
@@ -35,7 +35,7 @@ export class AuthService {
 
   login(email:string, pass:any){
     signInWithEmailAndPassword( this.auth,email ,pass).then((log)=>{
-      localStorage.setItem("swapUserID",log.user.uid)
+      localStorage.setItem("swapUserID*",log.user.uid)
       this.user=log.user;
       setTimeout(()=>{this.routes("let's-go")}, 2000)
     }).catch(err =>{

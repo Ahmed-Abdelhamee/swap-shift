@@ -9,8 +9,8 @@
         z-index: 2;
     }
     div .toggle{
-        margin-top: -50px;
-        z-index: 1;
+        margin-top: 10px;
+        z-index: 2;
         text-align: center;
     }
     div .toggle a img{
@@ -41,11 +41,16 @@
     }
 }
 .headerStyle{
-    width: 100%;
     height: 60px;
     background-color: #6b084c;
+    padding: 10px;
+    padding-top: 5px;
+    width: 100%;
 }
-
+.pageTitleDiv{
+    display: flex;
+    justify-content: center;
+}
 .pageTitle{
     color: white;
     font-size: 30px;
@@ -54,15 +59,20 @@
     word-spacing: 10px;
     font-family:  'Lobster', cursive;
     cursor: pointer;
-    z-index: 2;
+    text-decoration: none;
 }
-
+.linksDiv{
+   float: right;
+    z-index: 2;
+    margin-top: -50px;
+}
 .Icon{
     margin-top: 5px;
     height: 50px;
     width: 50px;
     margin-bottom: 5px;
     float: right;
+    margin-right: -20px
 }
 .show_logOut{
     position: relative;
@@ -78,6 +88,10 @@
     border-radius: 10px;
     z-index: 2;
     cursor: pointer;
+}
+.toggle{
+    z-index: 2;
+    padding-right: 25px;
 }
 .title{
     font-weight: 600;

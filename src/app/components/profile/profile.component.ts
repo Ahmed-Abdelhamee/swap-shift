@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
           this._users.push(element)
         }
       }
-      this.user=this._users.find(item => item.userID==localStorage.getItem('swapUserID'))
+      this.user=this._users.find(item => item.userID==localStorage.getItem('swapUserID*'))
     })
     this.swap_arr=[]
     this.users=[]
@@ -61,7 +61,7 @@ export class ProfileComponent implements OnInit {
         this.user_requests[i].key=this.user_requests_keys[i]
       }
     this.wait=false;
-    this.user_requests=this.user_requests.filter(item => (item.userId == localStorage.getItem('swapUserID')))
+    this.user_requests=this.user_requests.filter(item => (item.userId == localStorage.getItem('swapUserID*')))
     // console.log(this.user_requests)
     })
   }

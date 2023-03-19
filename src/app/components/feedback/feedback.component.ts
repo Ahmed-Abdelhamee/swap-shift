@@ -24,7 +24,7 @@ export class FeedbackComponent implements OnInit {
 
   sendFeedback(){
     this.feedback.patchValue({
-      userID:localStorage.getItem("swapUserID")
+      userID:localStorage.getItem("swapUserID*")
     })
     // this.dataServ.sendFeedback(this.feedback.value);
 

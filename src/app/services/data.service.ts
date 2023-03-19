@@ -110,7 +110,7 @@ export class DataService {
         }
       }
     })
-    let items:swap[]=this.swap_arr.filter(item => item.userId == localStorage.getItem('swapUserID'))
+    let items:swap[]=this.swap_arr.filter(item => item.userId == localStorage.getItem('swapUserID*'))
     return items
   }
 

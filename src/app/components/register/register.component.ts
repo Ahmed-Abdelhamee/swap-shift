@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   userExist:boolean=false;
 
   constructor(private formbuilder:FormBuilder ,private route:Router , private auth:AuthService , private toastr: ToastrService , private routeServ:RoutersService) { 
-    if(localStorage.getItem('swapUserID')){
+    if(localStorage.getItem('swapUserID*')){
         this.userExist=true;
       }else{
         this.userExist=false;

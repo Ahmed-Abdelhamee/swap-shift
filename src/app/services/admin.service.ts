@@ -23,7 +23,7 @@ export class AdminService {
   }
   
   constructor(public auth:Auth , private http : HttpClient , private database:Database, private route:Router, private toastr:ToastrService,private dataServ:DataService) {
-    this.userId=localStorage.getItem('swapUserID')
+    this.userId=localStorage.getItem('swapUserID*')
    }
 
    addAdmin(adminMail:string){
@@ -54,7 +54,7 @@ export class AdminService {
       for (const key in data) {
         if (Object.prototype.hasOwnProperty.call(data, key)) {
           const element = data[key];
-          if(element.Admin_userId==localStorage.getItem("swapUserID")){
+          if(element.Admin_userId==localStorage.getItem("swapUserID*")){
             localStorage.setItem("Swap_shift_Admin","yes");
           }
         }

@@ -15,12 +15,10 @@
 
 <body>
     <div class="col-12 headerStyle">
-        <ul class="nav">
-          <li class="col-sm-2"></li>
-            <li class="nav-item col-sm-8 d-flex justify-content-center">
-              <a class="nav-link active pageTitle" (click)="routes('')"> Swap your shifts</a>
-            </li>
-            <li class="nav-item col-sm-2 d-flex justify-content-end">
+            <span class="pageTitleDiv">
+              <a class=" pageTitle" (click)="routes('')"> Swap your shifts</a>
+            </span>
+            <span class="linksDiv">
               <div class="toggle" *ngIf="userId">
                 <a class="toggleLink"> <img class="Icon " (click)="toggle()" src="assets/man.png" alt="man"></a>
                 
@@ -41,9 +39,7 @@
                 </div>
                 
               </div>
-            </li>
-          </ul>
-
+            </span>
     </div>
 </body>
 </html>
