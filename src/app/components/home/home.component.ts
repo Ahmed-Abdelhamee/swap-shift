@@ -24,23 +24,19 @@ export class HomeComponent implements OnInit {
   shift:boolean=false;
   homeShiftType:boolean=false;
   site:boolean=false;
-
-
-  numberOfPeople:number=0;
-  public Accounts:users[]=[]
-  public users_arr_keys:string[]=[]
   
   // arrays 
+  numberOfPeople:number=0;
+  Accounts:users[]=[]
+  users_arr_keys:string[]=[]
   swap_arr:swap[]=[];
   users:users[]=[];
-
   isUser:boolean=false;
 
   constructor( private formbuilder:FormBuilder , private http:HttpClient , private dataServ:DataService , private toastr:ToastrService , private route:Router ,private routeServ:RoutersService) {
                 this.swap.patchValue({
                   userId:localStorage.getItem('swapUserID*')
                 })  
-                
                 this.swap_arr = dataServ.set_Swap_dataArr(); // we call it here because we build it in service
                 this.users = dataServ.add_Users_in_arr(); // we call it here because we build it in service 
                 //and when we need to use the source to fill arrays we copy the source here in  constructor()
@@ -60,7 +56,6 @@ export class HomeComponent implements OnInit {
     userId:[''],
   })
 
-
   ngOnInit(): void { 
     this.dataServ.getUsers().subscribe(data =>{
       for (const key in data) {
@@ -70,10 +65,8 @@ export class HomeComponent implements OnInit {
           this.users_arr_keys.push(key)
         }
       }
-      
       this.nums_fun(this.users.length);
     })
-
     Aos.init();
   }
 
@@ -87,7 +80,6 @@ export class HomeComponent implements OnInit {
       clearInterval
     }
   }
-  
 
   // function for control the conflict between   shift in site  &  shift in home 
   set_where(event:any){
@@ -102,6 +94,7 @@ export class HomeComponent implements OnInit {
       }
       this.whereIsSelected=true;
     }
+
   // function for control the conflict between SwapType  ----->>> shift or holiday
   set_SwapType(event:any){
     if(event.target.value=='holiday'){
@@ -121,11 +114,9 @@ export class HomeComponent implements OnInit {
       })
     }
   }
-
   
   // function for save user request 
   saveSwap(){
-
     if(!localStorage.getItem('swapUserID*')){
         this.toastr.error('',"please login fristly");
         setTimeout(()=>{this.route.navigate(['/login'])}, 2000)
@@ -144,10 +135,9 @@ export class HomeComponent implements OnInit {
       }
     }
   }
-
-  getAccounts(){
+  // getAccounts(){
     
-  }
+  // }
   routes(link:string){
     this.routeServ.go_to(link)
   }

@@ -2,7 +2,6 @@
     width: 100%;
     float: left;
 }
-
 @media only screen and (max-width: 600px) {
     div.content{
         padding-top:40px ;
@@ -11,13 +10,12 @@
         background-repeat: repeat;
         padding-bottom: 250px;
     }
-
     div .textsShow{
         display: none;
     }
-    
     div .form_collection {
-        margin: -20px;
+        margin: -12px;
+        z-index: 5px;
     }
     div div .lets_swap{
         font-size: 22px;
@@ -25,11 +23,8 @@
     div div .notify_sign{
         font-size: 16px;
     }
-    // div div div .form-group{
-    //     padding-bottom: 10px;
-    // }
     div div div .numbers{
-        font-size: 15px;
+        font-size: 18px;
     }
     div div div div .shift{
         font-size: 12px;
@@ -59,6 +54,36 @@
         float: left;
         margin-bottom: 12px;
     }
+
+    div .container.texts p{
+        font-size: 16px;
+        padding-left: 5px;
+    }
+    div .container.texts p::before{
+        left: -22px;
+        top: calc(50% - 15px);
+    }
+    div.container.photo-text .col-sm-5,
+    div.container.photo-text .col-sm-6{
+        padding: 10px 15px;
+        margin-bottom: 20px;
+    }
+    div .container .col-sm-6 .text {
+        padding-top: 0px;
+        font-size: 16px;
+    }
+    div .container .card{
+        margin-bottom: 20px;
+    }
+    div div div .swapTextDiv p{
+        font-size: 18px;
+    }
+    div .container .card .card-text{
+        font-size: 18px;
+    }
+    div .container .card img{
+        height: 215px;
+    }
   }
 
 .content{
@@ -78,11 +103,12 @@
 }
 .numbers{
     color: white;
-    font-size: 20px;
+    font-size: 24px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     text-shadow: 2px 2px 5px #760252;
     text-transform: capitalize;
+    margin-top: 5px;
 }
 .card{
     box-shadow: inset -3px -3px 10px rgb(94, 85, 93) ,inset 2px 2px 10px rgb(234, 220, 234);
@@ -118,11 +144,14 @@
     to {opacity: 1; margin-top: 0px;}
 }
 .techReview{
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
     text-align: center;
     padding: 10px 50px;
+}
+.techReview.line2{
+    padding-bottom: 100px;
 }
 .notify_sign{
     color: bisque;
@@ -185,18 +214,106 @@ option{
     color: white;
 }
 
+.col-12{
+    padding: 0px;
+}
+.container.texts{
+    padding: 0px 7.5%;
+}
+.container.texts p,
+.container .col-sm-6 .text {
+    position: relative;
+    padding-top: 10px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.9vw;
+    font-weight: 700;
+    color: #760252;
+}
+.container.texts p{
+    font-size: 23px;
+    text-align: left;
+}
+.container.texts p:first-of-type{
+    margin-top: 20px;
+}
+.container.texts p::before{
+    position: absolute;
+    content: "";
+    border: 16px solid #760252;
+    left: -32px;
+    top: calc(50% - 8px);
+    border-color: transparent transparent transparent #e30ea1;
+}
+.photo-text{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    top: 35px;
+    margin-bottom: 35px;
+}
+.container.photo-text .col-sm-5,
+.container.photo-text .col-sm-6{
+    padding: 25px;
+    margin-bottom: 50px;
+}
+.container .col-sm-5 img{
+    border-radius: 25px;
+    box-shadow: 0px 0px 5px #b9adad;
+    width: 100%;
+    height: 260px;
+}
+.swapTextDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.swapTextDiv p{
+    font-family: "Lobster", cursive;
+    font-size: 30px;
+    padding: 15px 25px;
+    color: white;
+    background-color: #88005d;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: fit-content;
+    transition: .5s;
+}
+.swapTextDiv p:hover{
+    border-radius: 10px;
+}
+.container .card{
+    background-color: white;
+    box-shadow: none;
+    padding-bottom: 20px;
+    border-radius: 15px;
+}
+.container .card{
+    box-shadow: 0px 0px 8px lightgray;
+}
+.container .card img{
+    height: 250px;
+    border-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.container .card .card-text{
+    margin-bottom: 0;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    color: #760252;
+}
+.About-div{
+    padding: 4%;
+    margin-top: 50px;
+}
+.imgAbout{
+    width: 100%;
+    height: 251px;
+    border-radius: 20px;
+}
 
-
-
-
-
-
-
-
-
-    // background-image:linear-gradient(180deg , rgb(253, 214, 247),#480031);
-    // background-image:linear-gradient(140deg , rgb(234, 231, 231),rgb(15, 85, 150)); //-----
-
-    // background-image:linear-gradient(160deg ,#6b084c, rgb(253, 247, 252));
-    // background-image:linear-gradient(140deg , rgb(2, 67, 113),rgb(233, 237, 239));
-    // box-shadow: inset -3px -3px 10px rgb(178, 198, 248) ,inset 2px 2px 10px rgb(180, 208, 250);
